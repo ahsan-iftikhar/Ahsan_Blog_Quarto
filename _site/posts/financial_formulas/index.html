@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2022-09-13">
+
+<title>Ahsan Iftikhar - Financial Formulas</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Ahsan Iftikhar</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">About</a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Financial Formulas</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">September 13, 2022</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<p>A ready reference for financial formulas, enables to look-up the formula and it’s key input variables for ease in calculation and reference.</p>
+<p>Following key financial formulas are covered in this post.</p>
+<ol type="1">
+<li>Rate of return conversion for different periodicity</li>
+<li>Discounting</li>
+<li>Loan Amortization</li>
+<li>Derivative related formulas</li>
+</ol>
+<p>Note:</p>
+<ul>
+<li>This post is work in progress and other relevant formulas and details periodically updated.</li>
+<li>All decimal figures are rounded up to 4 decimal places</li>
+</ul>
+<hr>
+<section id="rate-conversion" class="level2">
+<h2 class="anchored" data-anchor-id="rate-conversion">1. Rate Conversion</h2>
+<section id="periodic-rate-of-return-prr" class="level3">
+<h3 class="anchored" data-anchor-id="periodic-rate-of-return-prr">1. Periodic Rate of Return (PRR)</h3>
+<p>Annual rate is given and the objective is to convert to periodic rate i.e.&nbsp;convert <em>annual rate</em> of return to either <em>monthly, quarterly or half-yearly</em> return. This cannot be simply achieved by dividing the annual rate by the number of periods. The following formulas has to be used.</p>
+<p><span class="math display">\[monthly \space / \space quarterly \space / \space biannually = (1+r)^{\frac{1}{n}}-1\]</span></p>
+<p>Where</p>
+<ul>
+<li>r = annual rate</li>
+<li>n = shorter period for which rate has to be obtained. Thus
+<ul>
+<li>n = 12 for monthly</li>
+<li>n = 2 for bi-annually</li>
+<li>n = 4 for quarterly</li>
+</ul></li>
+</ul>
+<p><strong>Examples</strong></p>
+<ol type="1">
+<li>Convert 17% annual rate to quarterly rate equivalent.</li>
+</ol>
+<ul>
+<li>Solution: Using the formula <span class="math inline">\((1+r)^{\frac{1}{n}}-1\)</span> wherein r = 0.17 and n = 4, the quarterly rate is 0.0400</li>
+</ul>
+<hr>
+</section>
+<section id="effective-annual-rate-ear" class="level3">
+<h3 class="anchored" data-anchor-id="effective-annual-rate-ear">2. Effective Annual Rate (EAR)</h3>
+<ol type="1">
+<li><em>When compounding is done multiple times in a year and we are interested in finding EAR.</em></li>
+</ol>
+<p>Following formula gives the EAR when compounding is done n number of times.</p>
+<p><span class="math display">\[EAR = (1+\frac{r}{n})^n -1\]</span></p>
+<p>Where</p>
+<ul>
+<li>r = interest rate / compounding period</li>
+<li>n = number of compounding periods
+<ul>
+<li>n = 12 for monthly</li>
+<li>n = 2 for bi-annually</li>
+<li>n = 4 for quarterly</li>
+</ul></li>
+</ul>
+<p><strong>Examples</strong></p>
+<ol type="1">
+<li>Annual rate of return is 17% which is compounded twice a year. Calculate EAR.</li>
+</ol>
+<ul>
+<li>Solution: Using the formula <span class="math inline">\((1+\frac{r}{n})^n -1\)</span> the EAR is 0.1772</li>
+</ul>
+<ol start="2" type="1">
+<li><em>Effective interest rate per compounding period (similar to PRR, however, in this case compounding is done multiple times in the year)</em></li>
+</ol>
+<p>This second formula give the effective interest rate per compounding period.</p>
+<p><span class="math display">\[R = (1+\frac{r}{n})^\frac{n}{p} -1\]</span></p>
+<p>Where</p>
+<ul>
+<li>p = No of payment periods per year</li>
+<li>r = nominal annual interest rate</li>
+<li>n = No.&nbsp;of compounding periods per year</li>
+<li>R = Rate per payment period</li>
+</ul>
+<p><strong>Example</strong></p>
+<ol type="1">
+<li>Annual rate of return is 17% which is compounded twice a year and payments are made quarterly. Calculate PRR.</li>
+</ol>
+<ul>
+<li>Solution: Using the formula <span class="math inline">\((1+\frac{r}{n})^\frac{n}{p} -1\)</span> the PRR (with multiple compoundings in a year) is 0.0416</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="discounting" class="level2">
+<h2 class="anchored" data-anchor-id="discounting">2. Discounting</h2>
+<section id="present-value-pv" class="level3">
+<h3 class="anchored" data-anchor-id="present-value-pv">1. Present Value (PV)</h3>
+<p>Describe present value.</p>
+<p><span class="math display">\[PV = (1 + r)^{-t}\]</span></p>
+<p>Where</p>
+<ul>
+<li>r = Annual rate of return</li>
+<li>t = Number of years</li>
+</ul>
+<p><strong>Examples</strong></p>
+<ol type="1">
+<li>Calculate the present value of 3 year maturity instrument when the rate per annum is 18%.</li>
+</ol>
+<ul>
+<li>Solution: Using the formula, <span class="math inline">\(PV = (1 + r)^{-t}\)</span> the PV discount value is 0.6086</li>
+</ul>
+</section>
+<section id="present-value-compounded-periodically" class="level3">
+<h3 class="anchored" data-anchor-id="present-value-compounded-periodically">2. Present Value (compounded periodically)</h3>
+<p>In this case the formula is just the putting a negative in the exponent i.e.&nbsp;-nt</p>
+<p><span class="math display">\[PV \space factor = (1+\frac{r}{n})^{-nt}\]</span></p>
+<p>Where</p>
+<ul>
+<li>r = Annual rate of return</li>
+<li>n = Number of times compounding is done per year</li>
+<li>t = Number of years</li>
+</ul>
+<ol type="1">
+<li>Calculate the present value of 3 year maturity instrument when the rate per annum is 18% and compounding is done quarterly.</li>
+</ol>
+<ul>
+<li>Solution: Using the formula, <span class="math inline">\(PV = FV.(1+\frac{r}{n})^{-nt}\)</span> the PV discount value is 0.1121</li>
+</ul>
+</section>
+<section id="annuity-formula" class="level3">
+<h3 class="anchored" data-anchor-id="annuity-formula">3. Annuity Formula</h3>
+<p>Describe annuity.</p>
+<p><span class="math display">\[Annuity \space factor = [1 - \frac{(1+r)^{-t}}{r}]\]</span></p>
+<p>Where</p>
+<ul>
+<li>r = Annual rate of return</li>
+<li>n = Number of times compounding is done per year</li>
+<li>t = Number of years</li>
+</ul>
+</section>
+<section id="future-value-compounded-once-a-year" class="level3">
+<h3 class="anchored" data-anchor-id="future-value-compounded-once-a-year">3. Future value (compounded once a year)</h3>
+<p><span class="math display">\[PV = (1 + r)^{t}\]</span></p>
+<p>Where</p>
+<ul>
+<li>r = Annual rate of return</li>
+<li>t = Number of years</li>
+</ul>
+</section>
+<section id="future-value-compounded-periodically" class="level3">
+<h3 class="anchored" data-anchor-id="future-value-compounded-periodically">4. Future Value (compounded periodically)</h3>
+<p>Compounding Interest Rate (when compounding more frequent than on yearly basis)</p>
+<p>Examples are monthly, quarterly, bi-annually.</p>
+<p><span class="math display">\[FV \space factor = (1+\frac{r}{n})^{nt}\]</span></p>
+<p>Where</p>
+<ul>
+<li>r = Annual interest rate</li>
+<li>n = number times compounding is done on a yearly basis</li>
+<li>t = time in years</li>
+</ul>
+<p>Examples</p>
+</section>
+</section>
+<section id="loan-related" class="level2">
+<h2 class="anchored" data-anchor-id="loan-related">3. Loan Related</h2>
+<section id="loan-amortization-method" class="level3">
+<h3 class="anchored" data-anchor-id="loan-amortization-method">1. Loan Amortization Method</h3>
+<p><span class="math display">\[A = P\frac{r(1+r)^n}{(1+r)^n-1}\]</span> Where</p>
+<ul>
+<li>A = payment amount per period</li>
+<li>P = Value of borrowed capital</li>
+<li>r = interest rate per period (it is important to calculate the interest rate for the period. Thus simply divide the annual rate with the number of times payment has to be made per period)</li>
+<li>n = total number of payments or periods</li>
+</ul>
+<p>Example</p>
+<ol type="1">
+<li>A individual is desirous of taking a loan for USD 50,000. He wishes to settle it in 5 years, with monthly payments. Bank’s determines the interest rate of 14%, based on the risk profile of the individual. Calculate the monthly instalments due from the individual?</li>
+</ol>
+<ul>
+<li>Solution: Using the formula above <span class="math inline">\(A = P\frac{r(1+r)^n}{(1+r)^n-1}\)</span> and putting in the values the annuity payment per month is USD 1163.41</li>
+</ul>
+</section>
+</section>
+<section id="derivative-related-formulas" class="level2">
+<h2 class="anchored" data-anchor-id="derivative-related-formulas">4. Derivative Related Formulas</h2>
+<section id="forward-rate" class="level3">
+<h3 class="anchored" data-anchor-id="forward-rate">1. Forward Rate</h3>
+<p><span class="math display">\[F = S.ln^{(r_2-r_1).t}\]</span></p>
+<p>Where</p>
+<ul>
+<li>F = Forward rate</li>
+<li>S = Spot rate (this is generally the closing rate for the date)</li>
+<li><span class="math inline">\(ln\)</span> = Base of the natural logarithms (2.718)</li>
+<li><span class="math inline">\(r_2\)</span> = interest free rate of the target currency in which the final settlement will be done.</li>
+<li><span class="math inline">\(r_1\)</span> = interest free rate of the host currency in which the transaction is done</li>
+<li>t = Time to final settlement (in years)</li>
+</ul>
+</section>
+<section id="fair-value-of-derivative" class="level3">
+<h3 class="anchored" data-anchor-id="fair-value-of-derivative">2. Fair Value of Derivative</h3>
+<p><span class="math display">\[FV = A.(F-K).(e)^{-r_2.T}\]</span> Where</p>
+<ul>
+<li>FV = Fair value</li>
+<li>A = Amount in the host currency</li>
+<li>K = Strike price (the rate on which the final settlement will be done)</li>
+</ul>
+</section>
+<section id="discounting-based-fair-value-present-value-of-derivative" class="level3">
+<h3 class="anchored" data-anchor-id="discounting-based-fair-value-present-value-of-derivative">3. Discounting based Fair Value / Present Value of Derivative</h3>
+<p><span class="math display">\[PV = A.exp(-r_2.T)\]</span> Where</p>
+<ul>
+<li>exp = exponent</li>
+</ul>
+</section>
+<section id="floating-leg-of-interest-rate-swaps" class="level3">
+<h3 class="anchored" data-anchor-id="floating-leg-of-interest-rate-swaps">4. Floating Leg of Interest Rate Swaps</h3>
+<p><span class="math display">\[PV_{floating} = F - \frac{F}{(1+\frac{r}{n})^{nt}}\]</span></p>
+<p>Where</p>
+<ul>
+<li>F = Face value or notional amount</li>
+<li>r = interest rate (decimal)</li>
+<li>n = number of times interest is compounded per year.</li>
+<li>t = time (in years)</li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

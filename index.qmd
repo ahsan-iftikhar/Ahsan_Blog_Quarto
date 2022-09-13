@@ -1,5 +1,5 @@
 ---
-title: "Ahsan_Blog_Quarto"
+title: "Professional & Personal Blog"
 listing:
   contents: posts
   sort: "date desc"

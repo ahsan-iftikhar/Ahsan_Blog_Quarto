@@ -2,8 +2,11 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/post-with-code/index.html",
-      "/posts/welcome/index.html"
+      "/posts/financial_formulas/index.html",
+      "/posts/moa_key_considerations/index.html",
+      "/posts/understanding_git/index.html",
+      "/posts/pie_chart_using_ggplot/index.html",
+      "/posts/using_ssh_to_connect_to_github/index.html"
     ]
   }
 ]

@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "Ahsan_Blog_Quarto"
+  title: "Ahsan Iftikhar"
   navbar:
     right:
       - about.qmd

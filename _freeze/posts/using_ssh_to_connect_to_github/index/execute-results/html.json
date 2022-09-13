@@ -1,0 +1,14 @@
+{
+  "hash": "14afd26d520d4d86bec457fc0d9f4e58",
+  "result": {
+    "markdown": "---\ntitle: \"Using SSH to connect to Github\"\ndate: \"2022-05-22\"\n---\n\n\nSince github has introduced Personal Access Token (PAT) for security reasons, I find it extremely challenging to connect with github, using PAT, to maintain this blog. Github recommends PAT, however, I find SSH to be much more convenient.\n\nThe following blog post tries to support anyone who wishes to use SSH.\n\n1.  Generating the public and private key (either on Linux or WSL on Windows)\n\n\n::: {.cell}\n\n```{.r .cell-code}\nssh-keygen -t ed25519 -C \"Description for you Reference\"\n```\n:::\n\n\nSelect all the defaults while creating the public key. It is recommended to define a passphrase.\n\n2.  Activating ssh-agent\n\n\n::: {.cell}\n\n```{.r .cell-code}\neval \"$(ssh-agent -s)\"\n```\n:::\n\n\n3.  Adding the key\n\n\n::: {.cell}\n\n```{.r .cell-code}\nssh-add ~/.ssh/id_ed25519\n```\n:::\n\n\n4.  Copy the key and add to Github\n\nCopy the public key using the following command and paste into github.\n\n\n::: {.cell}\n\n```{.r .cell-code}\ncat ~/.ssh/ed25519.pub\n```\n:::\n\n\nThe ssh public key has to be inserted into the setting section of github\n\n5.  Check if ssh connection is established github\n\n\n::: {.cell}\n\n```{.r .cell-code}\nssh git@github.com\n```\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

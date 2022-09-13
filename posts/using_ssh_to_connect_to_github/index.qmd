@@ -1,0 +1,44 @@
+---
+title: "Using SSH to connect to Github"
+date: "2022-05-22"
+---
+
+Since github has introduced Personal Access Token (PAT) for security reasons, I find it extremely challenging to connect with github, using PAT, to maintain this blog. Github recommends PAT, however, I find SSH to be much more convenient.
+
+The following blog post tries to support anyone who wishes to use SSH.
+
+1.  Generating the public and private key (either on Linux or WSL on Windows)
+
+```{r eval=FALSE}
+ssh-keygen -t ed25519 -C "Description for you Reference"
+```
+
+Select all the defaults while creating the public key. It is recommended to define a passphrase.
+
+2.  Activating ssh-agent
+
+```{r eval=FALSE}
+eval "$(ssh-agent -s)"
+```
+
+3.  Adding the key
+
+```{r eval=FALSE}
+ssh-add ~/.ssh/id_ed25519
+```
+
+4.  Copy the key and add to Github
+
+Copy the public key using the following command and paste into github.
+
+```{r eval=FALSE}
+cat ~/.ssh/ed25519.pub
+```
+
+The ssh public key has to be inserted into the setting section of github
+
+5.  Check if ssh connection is established github
+
+```{r eval=FALSE}
+ssh git@github.com
+```

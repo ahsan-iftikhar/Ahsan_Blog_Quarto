@@ -1,6 +1,6 @@
 ---
 title: "About"
-image: profile.jpg
+image: ahsan_profile_pic.jpg
 about:
   template: jolla
   links:
@@ -16,4 +16,12 @@ about:
 
 ---
 
-About this blog
+Blog Expectations A brief statement about objectives and what to expect from this blog
+
+Writing and teaching is an exploratory and insightful journey for better understanding and assimilation of knowledge. This blog aims to share my learning journey. Following expectations defines the content in this blog.
+
+-   Most of the content will focus on areas like data science, tools & technologies and generating valuable insights.
+-   In addition, it will feature topics on business, strategy, finance and audit.
+-   In almost all the cases, I will not be the originator of knowledge and content, rather it's an attempt to share my understanding and insights. All original authors and content writers will be adequately referenced.
+
+**Important:** None of the posts shared on this blog represent a professional advise. Its rather my perspectives and opinions, which often change frequently. *Treat the posts on this blog, as occasional conversations from a friend who is trying to provide or get a better understanding.*
