@@ -6,3 +6,8 @@ freeze: true
 
 # Enable banner style title blocks
 title-block-banner: true
+
+# Comments
+comments: 
+  utterances: 
+    repo:  ahsan-iftikhar/ahsan_quarto_comments
