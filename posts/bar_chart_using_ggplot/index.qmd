@@ -1,0 +1,104 @@
+---
+title: "Making bar chart using ggplot"
+date: "2022-09-13"
+---
+
+# What is a bar chart?
+
+A chart featuring the interaction of a categorical variable and it's numercial value. More simply, the numercial values are represented by bars, whose length vary based on the value
+
+> Bar chart is more preferrable than pie charts and mostly better choice to compare values.
+
+# When to use it?
+
+* When drawing comparison between different categorical variables.
+* When the discrete variables being represented are more than 4. 
+
+# When not to use it?
+
+* When the discrete variables being represented are greater than 5
+* When comparison of a discrete variable, having another another discrete variable is required
+
+# Hueristic of making a bar chart in R
+
+* In the ggplot, aesthetic function call, 
+     + x should be categorical variable. Use as.factor, in-case the variable is a numeric variable 
+     + y should be the numerical variable from the dataset. 
+     + Fill argument should be the categorical variable from dataset.
+* Call geom_bar() function, wherein stat = "identity" 
+  + Alterntively, geom_col() can also be used
+* Finally, set labels using the labs() functions call 
+
+# Examples of making bar chart using ggplot2
+
+```{r}
+library(tidyverse)
+library(RColorBrewer)
+
+```
+
+Creating a sample data.
+
+```{r}
+df = tibble(
+  brand = c("Samsung","Huawei","Apple","Xiaomi","OPPO","Other"),
+  share = c(2090,1580, 1210, 930, 860, 3320)
+  )
+
+forcats::fct
+
+```
+
+## Bar chart
+
+
+```{r}
+
+ggplot(data = df |> fct_reorder(), 
+       mapping = aes(x = brand, y = share)) +
+  geom_bar(stat = "identity")
+
+
+```
+
+
+
+```{r}
+
+# Move this to Abraj R File -----------------------------------------------
+summary_obs <- tibble(
+  rating = c("High", "Medium", "Low"),
+  obs = c(0, 2, 7),
+  color = c("red", "yellow", "green"),
+  ann = c("No high rated exception", " ", " ")
+  )
+
+# summary_obs <- summary_obs %>%
+#   mutate(
+#     rating = factor(summary_obs$rating, levels = c("High", "Medium", "Low"))
+#   )
+
+summary_obs <- summary_obs %>%
+  mutate(
+    rating = as_factor(rating)
+  )
+
+ggplot(data = summary_obs, aes(x = rating, y = obs)) +
+  geom_bar(stat = "identity", aes(fill = rating)) +
+  geom_text(aes(label = obs)) +
+  theme_minimal() +
+  annotate("No high risk exception", x = 0.5, y =4) + 
+  scale_fill_manual(values = c("red", "yellow", "green")) +
+  labs(title = "Finance & Accounts Review",
+       subtitle = "Summary of observations by rating",
+       x = "Risk Rating",
+       y = "No. of Observations"
+       ) +
+  theme(
+    legend.position = "none"
+  )
+
+```
+
+
+

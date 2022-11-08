@@ -4,7 +4,6 @@ date: "2022-06-22"
 ---
 
 
-
 # What is a pie chart?
 
 A chart depicted by a circle, where the areas of the circle represent 100% proportion. To subdivide the circle into proportion, a line is drawn from axis to the circumference of circle - proportionate dividing the pie based on values.

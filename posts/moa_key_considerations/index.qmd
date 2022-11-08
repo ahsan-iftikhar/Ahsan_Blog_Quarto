@@ -1,19 +1,21 @@
 ---
-title: "Manual of authority, key cosiderations"
+title: "Manual of authority (MoA) | What to include? and more importantly what not to include?"
 date: "2022-08-24"
 ---
 
-What activities should become part of delegation of authority and what should be the purview of procedures is a key question that is encountered by anyone who develops delegation of authority. Based on my experience, following are the key set of rules that should be considered:
+Do you struggle with where to start, when developing or reviewing manual of authority? You are not alone and this article will help to make the process more structured and streamlined.
+
+Deciding on key business activities to be included or excluded in MoA is a key questions encountered by anyone who develops manual of authority. Based on my extensive experience in developing MoA and reviewing corporate governance review following are the key set of rules that should be considered:
 
 ## Activities crossing functional and departmental boundaries
 
-Any significant activity which crosses departmental or functional boundaries should be stated in the manual of authority.
+Any significant activity which crosses departmental or functional boundaries should not be stated in the manual of authority. On the contrary any activity which does not cross departmental or functional boundaries should be managed through departmental procedures; which can be approved by the Functional Head or CEO of the the organization.
 
-On the contract any activity (no matter how much significant) which does not cross departmental or functional boundaries should be managed/regulated through procedures.
+Many a times, activities related to operational approvals within the same department are stated in MoA, thus rendering the MoA very extensive, in-comprehensible and un-maintainable. The bigger risk is that such a MoA, wherein due care for the above mentioned point is not take, will be fully implemented.
 
-## Acceptance & rejection rule
+## Acceptance & rejection rule (for activities)
 
-The activity should represent significant activity which can be accepted or rejected. This implies that procedural activities which are routine in nature and does not require explicit approval should not included in the delegation of authority.
+The second key rule which determines if you should include the activity in MoA is - the activity should represent an activity which can be accepted or rejected. This implies that an element of review, judgement and prudence must be exercised by the person reviewing and approving the activity. Procedural activities which are routine in nature and does not require explicit approval should not included in MoA.
 
 ## Only key activities having significant operational and financial impact
 
