@@ -2,6 +2,9 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/board_evaluation/bod_evaluation.html",
+      "/posts/balanced_scorecard/balanced_scorecard.html",
+      "/posts/bar_chart_using_ggplot/index.html",
       "/posts/financial_formulas/index.html",
       "/posts/moa_key_considerations/index.html",
       "/posts/understanding_git/index.html",

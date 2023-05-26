@@ -45,7 +45,9 @@ df = tibble(
   share = c(2090,1580, 1210, 930, 860, 3320)
   )
 
-forcats::fct
+
+df <- df %>% 
+  dplyr::mutate(brand = forcats::fct_reorder(brand, share))
 
 ```
 
@@ -54,8 +56,7 @@ forcats::fct
 
 ```{r}
 
-ggplot(data = df |> fct_reorder(), 
-       mapping = aes(x = brand, y = share)) +
+ggplot2::ggplot(data = df, mapping = aes(x = brand, y = share)) +
   geom_bar(stat = "identity")
 
 
@@ -83,11 +84,10 @@ summary_obs <- summary_obs %>%
     rating = as_factor(rating)
   )
 
-ggplot(data = summary_obs, aes(x = rating, y = obs)) +
+ggplot2::ggplot(data = summary_obs, aes(x = rating, y = obs)) +
   geom_bar(stat = "identity", aes(fill = rating)) +
   geom_text(aes(label = obs)) +
   theme_minimal() +
-  annotate("No high risk exception", x = 0.5, y =4) + 
   scale_fill_manual(values = c("red", "yellow", "green")) +
   labs(title = "Finance & Accounts Review",
        subtitle = "Summary of observations by rating",
