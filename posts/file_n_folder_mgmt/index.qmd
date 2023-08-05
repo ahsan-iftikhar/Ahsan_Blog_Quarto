@@ -1,0 +1,58 @@
+---
+title: "FIle management for R projects"
+date: "2023-08-04"
+---
+
+# Reading files easily
+
+Reading and writing files can sometimes be challenging. This is an attempt to share the process I am following for making it easy to reading and writing of files in R.
+
+## Reading required packages.
+
+```{r}
+library(pacman)
+pacman::p_load(fs, folderfun, tidyverse)
+
+```
+
+## Define the path wherein the input and output will be located in the local drive.
+
+I have found the package [folder function package](https://cran.r-project.org/web/packages/folderfun/vignettes/intro.html) and [fs package](https://fs.r-lib.org/index.html) to be very useful for file managing files.
+
+-   fs::path() will be used to construct the path of the location folder
+-   folderfun::setff() will be used to define a new function, wherein the first argument is the name of the new function prceded by ff.
+
+```{r}
+
+# Defining the input function
+folderfun::setff(name = 'In',
+                 fs::path("C:/Users/aqureshi037/PycharmProjects/Ahsan_Blog_Quarto",
+                          "posts", "file_n_folder_Mgmt", "input_data")
+                 )
+
+# Defining the ourput function
+folderfun::setff(name = 'Out',
+                 fs::path("C:/Users/aqureshi037/PycharmProjects/Ahsan_Blog_Quarto",
+                          "posts", "file_n_folder_Mgmt", "output_data")
+                 )
+
+
+```
+
+## Reading of the file
+
+iris.csv file is already located in the 'input' folder.
+
+```{r}
+
+data(iris)
+
+#Writing the data to the folder
+readr::write_csv(iris, ffOut("iris.csv"))
+
+
+#Reading the data from the folder
+iris_data <- readr::read_csv(ffIn("iris.csv"))
+
+
+```

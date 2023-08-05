@@ -1,0 +1,39 @@
+---
+title: "Understanding balanced scorecard"
+date: "2022-09-13"
+---
+
+# Introduction
+
+-   Traditional performance measurement metrics over emphasize financial KPIs to the detriment of other key considerations, which are important from strategic and sustainability perspective.
+-   In addition to the financial aspects, balanced scorecard considers three key important considerations i.e. internal business processes, learning and growth and customer.
+
+# Key tenants of balanced scorecard
+
+-   Key perspectives of balanced scorecard and how KPIs are defined in each are stated below.
+-   Financial: To succeed financially, how should we appear to our investment stakeholders (equity or debt)
+    -   Objectives
+    -   Measures
+    -   Targets
+    -   Initiatives
+-   Internal business process: To satisfy business objectives what internal business processes must the entity excel at
+    -   Objectives
+    -   Measures
+    -   Targets
+    -   Initiatives
+-   Learning and growth: Aligned with entity's vision and plans, what learning and growth interventions should be pursued, which will ensure sustainability and gradual improvement.
+    -   Objectives
+    -   Measures
+    -   Targets
+    -   Initiatives
+-   Customers: How should a company be perceived by it's customers
+    -   Objectives
+    -   Measures
+    -   Targets
+    -   Initiatives
+
+# Typical workflow in setting balanced scorecard
+
+An over simplified workflow to understand the process of setting balanced scorecard is stated below
+
+![Flowchart](images/balanced_scorecard.mmd.png)

@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2022-09-13">
+<meta name="dcterms.date" content="2023-08-04">
 
-<title>Ahsan Iftikhar - Making bar chart using ggplot</title>
+<title>Ahsan Iftikhar - FIle management for R projects</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -140,7 +140,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Making bar chart using ggplot</h1>
+      <h1 class="title">FIle management for R projects</h1>
                       </div>
   </div>
     
@@ -151,7 +151,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">September 13, 2022</p>
+        <p class="date">August 4, 2023</p>
       </div>
     </div>
     
@@ -169,115 +169,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="what-is-a-bar-chart" class="level1">
-<h1>What is a bar chart?</h1>
-<p>A chart featuring the interaction of a categorical variable and it’s numercial value. More simply, the numercial values are represented by bars, whose length vary based on the value</p>
-<blockquote class="blockquote">
-<p>Bar chart is more preferrable than pie charts and mostly better choice to compare values.</p>
-</blockquote>
-</section>
-<section id="when-to-use-it" class="level1">
-<h1>When to use it?</h1>
-<ul>
-<li>When drawing comparison between different categorical variables.</li>
-<li>When the discrete variables being represented are more than 4.</li>
-</ul>
-</section>
-<section id="when-not-to-use-it" class="level1">
-<h1>When not to use it?</h1>
-<ul>
-<li>When the discrete variables being represented are greater than 5</li>
-<li>When comparison of a discrete variable, having another another discrete variable is required</li>
-</ul>
-</section>
-<section id="hueristic-of-making-a-bar-chart-in-r" class="level1">
-<h1>Hueristic of making a bar chart in R</h1>
-<ul>
-<li>In the ggplot, aesthetic function call,
-<ul>
-<li>x should be categorical variable. Use as.factor, in-case the variable is a numeric variable</li>
-<li>y should be the numerical variable from the dataset.</li>
-<li>Fill argument should be the categorical variable from dataset.</li>
-</ul></li>
-<li>Call geom_bar() function, wherein stat = “identity”
-<ul>
-<li>Alterntively, geom_col() can also be used</li>
-</ul></li>
-<li>Finally, set labels using the labs() functions call</li>
-</ul>
-</section>
-<section id="examples-of-making-bar-chart-using-ggplot2" class="level1">
-<h1>Examples of making bar chart using ggplot2</h1>
+<section id="reading-files-easily" class="level1">
+<h1>Reading files easily</h1>
+<p>Reading and writing files can sometimes be challenging. This is an attempt to share the process I am following for making it easy to reading and writing of files in R.</p>
+<section id="reading-required-packages." class="level2">
+<h2 class="anchored" data-anchor-id="reading-required-packages.">Reading required packages.</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pacman)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(fs, folderfun, tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="define-the-path-wherein-the-input-and-output-will-be-located-in-the-local-drive." class="level2">
+<h2 class="anchored" data-anchor-id="define-the-path-wherein-the-input-and-output-will-be-located-in-the-local-drive.">Define the path wherein the input and output will be located in the local drive.</h2>
+<p>I have found the package <a href="https://cran.r-project.org/web/packages/folderfun/vignettes/intro.html">folder function package</a> and <a href="https://fs.r-lib.org/index.html">fs package</a> to be very useful for file managing files.</p>
+<ul>
+<li>fs::path() will be used to construct the path of the location folder</li>
+<li>folderfun::setff() will be used to define a new function, wherein the first argument is the name of the new function prceded by ff.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Defining the input function</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>folderfun<span class="sc">::</span><span class="fu">setff</span>(<span class="at">name =</span> <span class="st">'In'</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>                 fs<span class="sc">::</span><span class="fu">path</span>(<span class="st">"C:/Users/aqureshi037/PycharmProjects/Ahsan_Blog_Quarto"</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"posts"</span>, <span class="st">"file_n_folder_Mgmt"</span>, <span class="st">"input_data"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>                 )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.2     ✔ readr     2.1.4
-✔ forcats   1.0.0     ✔ stringr   1.5.0
-✔ ggplot2   3.4.2     ✔ tibble    3.2.1
-✔ lubridate 1.9.2     ✔ tidyr     1.3.0
-✔ purrr     1.0.1     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+<pre><code>Created folder function ffIn(): C:/Users/aqureshi037/PycharmProjects/Ahsan_Blog_Quarto/posts/file_n_folder_Mgmt/input_data</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RColorBrewer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Defining the ourput function</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>folderfun<span class="sc">::</span><span class="fu">setff</span>(<span class="at">name =</span> <span class="st">'Out'</span>,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                 fs<span class="sc">::</span><span class="fu">path</span>(<span class="st">"C:/Users/aqureshi037/PycharmProjects/Ahsan_Blog_Quarto"</span>,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"posts"</span>, <span class="st">"file_n_folder_Mgmt"</span>, <span class="st">"output_data"</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>                 )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Created folder function ffOut(): C:/Users/aqureshi037/PycharmProjects/Ahsan_Blog_Quarto/posts/file_n_folder_Mgmt/output_data</code></pre>
 </div>
-<p>Creating a sample data.</p>
+</div>
+</section>
+<section id="reading-of-the-file" class="level2">
+<h2 class="anchored" data-anchor-id="reading-of-the-file">Reading of the file</h2>
+<p>iris.csv file is already located in the ‘input’ folder.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">tibble</span>(</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">brand =</span> <span class="fu">c</span>(<span class="st">"Samsung"</span>,<span class="st">"Huawei"</span>,<span class="st">"Apple"</span>,<span class="st">"Xiaomi"</span>,<span class="st">"OPPO"</span>,<span class="st">"Other"</span>),</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">share =</span> <span class="fu">c</span>(<span class="dv">2090</span>,<span class="dv">1580</span>, <span class="dv">1210</span>, <span class="dv">930</span>, <span class="dv">860</span>, <span class="dv">3320</span>)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">brand =</span> forcats<span class="sc">::</span><span class="fu">fct_reorder</span>(brand, share))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<section id="bar-chart" class="level2">
-<h2 class="anchored" data-anchor-id="bar-chart">Bar chart</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(<span class="at">data =</span> df, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> brand, <span class="at">y =</span> share)) <span class="sc">+</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Move this to Abraj R File -----------------------------------------------</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>summary_obs <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">rating =</span> <span class="fu">c</span>(<span class="st">"High"</span>, <span class="st">"Medium"</span>, <span class="st">"Low"</span>),</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">obs =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">7</span>),</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">color =</span> <span class="fu">c</span>(<span class="st">"red"</span>, <span class="st">"yellow"</span>, <span class="st">"green"</span>),</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">ann =</span> <span class="fu">c</span>(<span class="st">"No high rated exception"</span>, <span class="st">" "</span>, <span class="st">" "</span>)</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># summary_obs &lt;- summary_obs %&gt;%</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">#   mutate(</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co">#     rating = factor(summary_obs$rating, levels = c("High", "Medium", "Low"))</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co">#   )</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>summary_obs <span class="ot">&lt;-</span> summary_obs <span class="sc">%&gt;%</span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">rating =</span> <span class="fu">as_factor</span>(rating)</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(<span class="at">data =</span> summary_obs, <span class="fu">aes</span>(<span class="at">x =</span> rating, <span class="at">y =</span> obs)) <span class="sc">+</span></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="fu">aes</span>(<span class="at">fill =</span> rating)) <span class="sc">+</span></span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> obs)) <span class="sc">+</span></span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"red"</span>, <span class="st">"yellow"</span>, <span class="st">"green"</span>)) <span class="sc">+</span></span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Finance &amp; Accounts Review"</span>,</span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Summary of observations by rating"</span>,</span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Risk Rating"</span>,</span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"No. of Observations"</span></span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>       ) <span class="sc">+</span></span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"none"</span></span>
-<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(iris)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Writing the data to the folder</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">write_csv</span>(iris, <span class="fu">ffOut</span>(<span class="st">"iris.csv"</span>))</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">#Reading the data from the folder</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>iris_data <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="fu">ffIn</span>(<span class="st">"iris.csv"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 150 Columns: 5
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): Species
+dbl (4): Sepal.Length, Sepal.Width, Petal.Length, Petal.Width
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 </div>
 </div>
 

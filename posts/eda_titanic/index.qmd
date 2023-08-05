@@ -1,0 +1,17 @@
+---
+title: "EDA for Titanic"
+date: "2023-07-02"
+---
+
+
+```{r}
+library(tidyverse)
+head(iris)
+
+```
+
+```{python}
+
+print(1+1)
+
+```
