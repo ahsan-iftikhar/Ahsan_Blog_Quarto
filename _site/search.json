@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "Professional & Personal Blog",
     "section": "",
-    "text": "FIle management for R projects\n\n\n\n\n\n\n\n\n\n\n\n\nAug 4, 2023\n\n\n\n\n\n\n  \n\n\n\n\nEDA for Titanic\n\n\n\n\n\n\n\n\n\n\n\n\nJul 2, 2023\n\n\n\n\n\n\n  \n\n\n\n\nBoard of Directors Evaluation\n\n\n\n\n\n\n\n\n\n\n\n\nDec 24, 2022\n\n\n\n\n\n\n  \n\n\n\n\nUnderstanding balanced scorecard\n\n\n\n\n\n\n\n\n\n\n\n\nSep 13, 2022\n\n\n\n\n\n\n  \n\n\n\n\nMaking bar chart using ggplot\n\n\n\n\n\n\n\n\n\n\n\n\nSep 13, 2022\n\n\n\n\n\n\n  \n\n\n\n\nFinancial Formulas\n\n\n\n\n\n\n\n\n\n\n\n\nSep 13, 2022\n\n\n\n\n\n\n  \n\n\n\n\nManual of authority (MoA) | What to include? and more importantly what not to include?\n\n\n\n\n\n\n\n\n\n\n\n\nAug 24, 2022\n\n\n\n\n\n\n  \n\n\n\n\nUnderstanding Version Control, Git & Github\n\n\n\n\n\n\n\n\n\n\n\n\nJul 24, 2022\n\n\nAhsan Iftikhar\n\n\n\n\n\n\n  \n\n\n\n\nMaking pie chart using ggplot\n\n\n\n\n\n\n\n\n\n\n\n\nJun 22, 2022\n\n\n\n\n\n\n  \n\n\n\n\nUsing SSH to connect to Github\n\n\n\n\n\n\n\n\n\n\n\n\nMay 22, 2022\n\n\n\n\n\n\nNo matching items"
+    "text": "RemNotes & Why I use it\n\n\n\n\n\n\n\n\n\n\n\nAug 5, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nFIle management for R projects\n\n\n\n\n\n\n\n\n\n\n\nAug 4, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nEDA for Titanic\n\n\n\n\n\n\n\n\n\n\n\nJul 2, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nBoard of Directors Evaluation\n\n\n\n\n\n\n\n\n\n\n\nDec 24, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nUnderstanding balanced scorecard\n\n\n\n\n\n\n\n\n\n\n\nSep 13, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nMaking bar chart using ggplot\n\n\n\n\n\n\n\n\n\n\n\nSep 13, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nFinancial Formulas\n\n\n\n\n\n\n\n\n\n\n\nSep 13, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nManual of authority (MoA) | What to include? and more importantly what not to include?\n\n\n\n\n\n\n\n\n\n\n\nAug 24, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nUnderstanding Version Control, Git & Github\n\n\n\n\n\n\n\n\n\n\n\nJul 24, 2022\n\n\nAhsan Iftikhar\n\n\n\n\n\n\n\n\n\n\n\n\nMaking pie chart using ggplot\n\n\n\n\n\n\n\n\n\n\n\nJun 22, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nUsing SSH to connect to Github\n\n\n\n\n\n\n\n\n\n\n\nMay 22, 2022\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/pie_chart_using_ggplot/index.html",
@@ -25,7 +25,7 @@
     "href": "posts/pie_chart_using_ggplot/index.html#donut-chart",
     "title": "Making pie chart using ggplot",
     "section": "Donut chart",
-    "text": "Donut chart\n\nggplot(data = df, mapping = aes(x = \"\", y = share, fill = brand)) +\n  geom_bar(stat = \"identity\", width = 1) +\n  coord_polar(theta = \"y\", start = 0) +\n  geom_text(aes(\n    label = str_c(round(share*100), \"%\")),\n    position = position_stack(vjust = 0.5)\n    ) +\n  theme_void() +\n  scale_fill_brewer(palette = \"Dark2\") +\n  labs(title = \"Manufacturer - Market Share\") +\n  theme(\n    plot.title = element_text(hjust = 0.5, color = \"red\")\n  )\n\n\n\n\n\nggplot(data = df, mapping = aes(x = 2, y = share, fill = brand)) +\n  geom_bar(stat = \"identity\", width = 1) +\n  coord_polar(theta = \"y\", start = 0) +\n  geom_text(aes(\n    label = str_c(round(share*100), \"%\")),\n    position = position_stack(vjust = 0.5)\n    ) +\n  theme_void() +\n  scale_fill_brewer(palette = \"Dark2\") +\n  labs(title = \"Manufacturer - Market Share\") +\n  theme(\n    plot.title = element_text(hjust = 0.5, color = \"red\")\n  ) +\n  xlim(0.5, 2.5)"
+    "text": "Donut chart\n\nggplot(data = df, mapping = aes(x = \"\", y = share, fill = brand)) +\n  geom_bar(stat = \"identity\", width = 1) +\n  coord_polar(theta = \"y\", start = 0) +\n  geom_text(aes(\n    label = str_c(round(share*100), \"%\")),\n    position = position_stack(vjust = 0.5)\n    ) +\n  theme_void() +\n  scale_fill_brewer(palette = \"Dark2\") +\n  labs(title = \"Manufacturer - Market Share\") +\n  theme(\n    plot.title = element_text(hjust = 0.5, color = \"red\")\n  )\n\n\n\n\n\n\n\n\n\nggplot(data = df, mapping = aes(x = 2, y = share, fill = brand)) +\n  geom_bar(stat = \"identity\", width = 1) +\n  coord_polar(theta = \"y\", start = 0) +\n  geom_text(aes(\n    label = str_c(round(share*100), \"%\")),\n    position = position_stack(vjust = 0.5)\n    ) +\n  theme_void() +\n  scale_fill_brewer(palette = \"Dark2\") +\n  labs(title = \"Manufacturer - Market Share\") +\n  theme(\n    plot.title = element_text(hjust = 0.5, color = \"red\")\n  ) +\n  xlim(0.5, 2.5)"
   },
   {
     "objectID": "posts/moa_key_considerations/index.html",
@@ -305,7 +305,7 @@
     "href": "posts/eda_titanic/index.html",
     "title": "EDA for Titanic",
     "section": "",
-    "text": "x = 1\nprint(x)\n\n1\n\n\n\ny &lt;- \"This is R code\"\n\nprint(y)\n\n[1] \"This is R code\""
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nhead(iris)\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1          5.1         3.5          1.4         0.2  setosa\n2          4.9         3.0          1.4         0.2  setosa\n3          4.7         3.2          1.3         0.2  setosa\n4          4.6         3.1          1.5         0.2  setosa\n5          5.0         3.6          1.4         0.2  setosa\n6          5.4         3.9          1.7         0.4  setosa\n\n\n\nprint(1+1)\n\n2"
   },
   {
     "objectID": "posts/file_n_folder_mgmt/index.html",
@@ -341,5 +341,12 @@
     "title": "FIle management for R projects",
     "section": "",
     "text": "library(pacman)\npacman::p_load(fs, folderfun, tidyverse)"
+  },
+  {
+    "objectID": "posts/remnotes/remnotes.html",
+    "href": "posts/remnotes/remnotes.html",
+    "title": "RemNotes & Why I use it",
+    "section": "",
+    "text": "Remnote is a powerful notes taking program which is available both as on online version and as a web application.\nKey features of the applications are - Ability to link notes - Configuring notes for space repetition - Good PDF notes taking editor which allows to take notes while reading a document. - Defining your own templates to structure your notes - Pleasant UI for all you notes.\nComplete details of all the features are available on the RemNotes Website\nThere are other options, however, in my view Remnote is the best. I believe I was one of the early adopters and I have seen the evolution over the years. Continuously new features are being added and this has greatly improved the overall value proposition offered by Remnote.\nLastly you can try the application using this link. This will give me some credit, however, seeking credit is not the reason to post this link. I genuinely love Remnote and I believe it one the best tool."
   }
 ]

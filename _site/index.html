@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.340">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -47,7 +47,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -56,8 +62,10 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script>
@@ -93,16 +101,43 @@ ul.task-list li input[type="checkbox"] {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Ahsan Iftikhar</span>
     </a>
@@ -114,23 +149,23 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com" rel="" target=""><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com"> <i class="bi bi-twitter" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -143,7 +178,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
     
   
-  <div class="quarto-title-meta">
+  <div class="quarto-title-meta column-page-left">
 
       
     
@@ -156,7 +191,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(11)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(12)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -167,222 +202,255 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1688437251301" data-listing-reading-time-sort="0">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1718537053434">
 <div class="thumbnail">
-<p><a href="./posts/ammonia_&amp;_urea_manufacturing/ammonia_&amp;_urea_manufacturing.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="./posts/ammonia_&amp;_urea_manufacturing/ammonia_&amp;_urea_manufacturing.html" class="no-external"></a></p><a href="./posts/ammonia_&amp;_urea_manufacturing/ammonia_&amp;_urea_manufacturing.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/ammonia_&amp;_urea_manufacturing/ammonia_&amp;_urea_manufacturing.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/ammonia_&amp;_urea_manufacturing/ammonia_&amp;_urea_manufacturing.html">
 <h3 class="no-anchor listing-title">
+<a href="./posts/ammonia_&amp;_urea_manufacturing/ammonia_&amp;_urea_manufacturing.html" class="no-external"></a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/ammonia_&amp;_urea_manufacturing/ammonia_&amp;_urea_manufacturing.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-
+<a href="./posts/ammonia_&amp;_urea_manufacturing/ammonia_&amp;_urea_manufacturing.html" class="no-external"></a>
+</div>
+</div>
+<div class="metadata">
+<p><a href="./posts/ammonia_&amp;_urea_manufacturing/ammonia_&amp;_urea_manufacturing.html" class="no-external"></a></p><a href="./posts/ammonia_&amp;_urea_manufacturing/ammonia_&amp;_urea_manufacturing.html" class="no-external">
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1691179200000" data-listing-file-modified-sort="1718537053511" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="157">
+<div class="thumbnail">
+<p><a href="./posts/remnotes/remnotes.html" class="no-external"></a></p><a href="./posts/remnotes/remnotes.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/remnotes/remnotes.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/remnotes/remnotes.html" class="no-external">RemNotes &amp; Why I use it</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/remnotes/remnotes.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./posts/remnotes/remnotes.html" class="no-external">Remnote is a powerful notes taking program which is available both as on online version and as a web application.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/remnotes/remnotes.html" class="no-external">
+<div class="listing-date">
+Aug 5, 2023
 </div>
 </a>
 </div>
-<div class="metadata">
-<a href="./posts/ammonia_&amp;_urea_manufacturing/ammonia_&amp;_urea_manufacturing.html"> </a>
 </div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1691096400000" data-listing-file-modified-sort="1691173085116" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1691092800000" data-listing-file-modified-sort="1718537053469" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="269">
 <div class="thumbnail">
-<p><a href="./posts/file_n_folder_mgmt/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="./posts/file_n_folder_mgmt/index.html" class="no-external"></a></p><a href="./posts/file_n_folder_mgmt/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/file_n_folder_mgmt/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/file_n_folder_mgmt/index.html">
 <h3 class="no-anchor listing-title">
-FIle management for R projects
+<a href="./posts/file_n_folder_mgmt/index.html" class="no-external">FIle management for R projects</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/file_n_folder_mgmt/index.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-Reading and writing files can sometimes be challenging. This is an attempt to share the process I am following for making it easy to reading and writing of files in R.
+<a href="./posts/file_n_folder_mgmt/index.html" class="no-external">Reading and writing files can sometimes be challenging. This is an attempt to share the process I am following for making it easy to reading and writing of files in R.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/file_n_folder_mgmt/index.html">
+<a href="./posts/file_n_folder_mgmt/index.html" class="no-external">
 <div class="listing-date">
 Aug 4, 2023
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1688245200000" data-listing-file-modified-sort="1691057951809" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="3" data-listing-date-sort="1688241600000" data-listing-file-modified-sort="1718537053459" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
 <div class="thumbnail">
-<p><a href="./posts/eda_titanic/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="./posts/eda_titanic/index.html" class="no-external"></a></p><a href="./posts/eda_titanic/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/eda_titanic/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/eda_titanic/index.html">
 <h3 class="no-anchor listing-title">
-EDA for Titanic
+<a href="./posts/eda_titanic/index.html" class="no-external">EDA for Titanic</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/eda_titanic/index.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-<span class="hidden" data-render-id="quarto-int-sidebar-title">Ahsan Iftikhar</span> <span class="hidden" data-render-id="quarto-int-navbar-title">Ahsan Iftikhar</span> <span class="hidden" data-render-id="quarto-int-navbar:About">About</span> <span class="hidden" data-render-id="quarto-int-navbar:/about.html">/about.html</span> <span class="hidden" data-render-id="quarto-int-navbar:https://github.com/">https://github.com/</span> <span class="hidden" data-render-id="quarto-int-navbar:https://twitter.com">https://twitter.com</span>
+<a href="./posts/eda_titanic/index.html" class="no-external">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr…</code></pre></div><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="fu"></span></span></code></pre></div><div class="cell-output cell-output-stdout"><pre><code></code></pre></div></a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/eda_titanic/index.html">
+<a href="./posts/eda_titanic/index.html" class="no-external">
 <div class="listing-date">
 Jul 2, 2023
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-listing-date-sort="1671829200000" data-listing-file-modified-sort="1671888010947" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="4" data-listing-date-sort="1671825600000" data-listing-file-modified-sort="1718537053452" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
 <div class="thumbnail">
-<p><a href="./posts/board_evaluation/bod_evaluation.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="./posts/board_evaluation/bod_evaluation.html" class="no-external"></a></p><a href="./posts/board_evaluation/bod_evaluation.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/board_evaluation/bod_evaluation.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/board_evaluation/bod_evaluation.html">
 <h3 class="no-anchor listing-title">
-Board of Directors Evaluation
+<a href="./posts/board_evaluation/bod_evaluation.html" class="no-external">Board of Directors Evaluation</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/board_evaluation/bod_evaluation.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-
+<a href="./posts/board_evaluation/bod_evaluation.html" class="no-external"></a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/board_evaluation/bod_evaluation.html">
+<a href="./posts/board_evaluation/bod_evaluation.html" class="no-external">
 <div class="listing-date">
 Dec 24, 2022
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-listing-date-sort="1663016400000" data-listing-file-modified-sort="1688204356450" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="5" data-listing-date-sort="1663012800000" data-listing-file-modified-sort="1718537053446" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="277">
 <div class="thumbnail">
-<p><a href="./posts/balanced_scorecard/index.html"> <p class="card-img-top"><img src="posts\balanced_scorecard\images\balanced_scorecard.mmd.png"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="./posts/balanced_scorecard/index.html" class="no-external"></a></p><a href="./posts/balanced_scorecard/index.html" class="no-external">
+<p class="card-img-top"><img src="posts\balanced_scorecard\images\balanced_scorecard.mmd.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/balanced_scorecard/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/balanced_scorecard/index.html">
 <h3 class="no-anchor listing-title">
-Understanding balanced scorecard
+<a href="./posts/balanced_scorecard/index.html" class="no-external">Understanding balanced scorecard</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/balanced_scorecard/index.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-An over simplified workflow to understand the process of setting balanced scorecard is stated below
+<a href="./posts/balanced_scorecard/index.html" class="no-external">An over simplified workflow to understand the process of setting balanced scorecard is stated below</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/balanced_scorecard/index.html">
+<a href="./posts/balanced_scorecard/index.html" class="no-external">
 <div class="listing-date">
 Sep 13, 2022
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-listing-date-sort="1663016400000" data-listing-file-modified-sort="1684935395478" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="6" data-listing-date-sort="1663012800000" data-listing-file-modified-sort="1718537053449" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="401">
 <div class="thumbnail">
-<p><a href="./posts/bar_chart_using_ggplot/index.html"> <p class="card-img-top"><img src="posts\bar_chart_using_ggplot\index_files\figure-html\unnamed-chunk-3-1.png"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="./posts/bar_chart_using_ggplot/index.html" class="no-external"></a></p><a href="./posts/bar_chart_using_ggplot/index.html" class="no-external">
+<p class="card-img-top"><img src="posts\bar_chart_using_ggplot\index_files\figure-html\unnamed-chunk-3-1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/bar_chart_using_ggplot/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/bar_chart_using_ggplot/index.html">
 <h3 class="no-anchor listing-title">
-Making bar chart using ggplot
+<a href="./posts/bar_chart_using_ggplot/index.html" class="no-external">Making bar chart using ggplot</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/bar_chart_using_ggplot/index.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-A…
+<a href="./posts/bar_chart_using_ggplot/index.html" class="no-external">A chart featuring the interaction of a categorical variable and it’s numercial value. More simply, the numercial values are represented by bars, whose length vary based on…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/bar_chart_using_ggplot/index.html">
+<a href="./posts/bar_chart_using_ggplot/index.html" class="no-external">
 <div class="listing-date">
 Sep 13, 2022
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-listing-date-sort="1663016400000" data-listing-file-modified-sort="1671887661786" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-index="7" data-listing-date-sort="1663012800000" data-listing-file-modified-sort="1718537053480" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="987">
 <div class="thumbnail">
-<p><a href="./posts/financial_formulas/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="./posts/financial_formulas/index.html" class="no-external"></a></p><a href="./posts/financial_formulas/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/financial_formulas/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/financial_formulas/index.html">
 <h3 class="no-anchor listing-title">
-Financial Formulas
+<a href="./posts/financial_formulas/index.html" class="no-external">Financial Formulas</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/financial_formulas/index.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-A ready reference for financial formulas, enables to look-up the formula and it’s key input variables for ease in calculation and reference.
+<a href="./posts/financial_formulas/index.html" class="no-external">A ready reference for financial formulas, enables to look-up the formula and it’s key input variables for ease in calculation and reference.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/financial_formulas/index.html">
+<a href="./posts/financial_formulas/index.html" class="no-external">
 <div class="listing-date">
 Sep 13, 2022
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="7" data-listing-date-sort="1661288400000" data-listing-file-modified-sort="1671887661786" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="8" data-listing-date-sort="1661284800000" data-listing-file-modified-sort="1718537053484" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="284">
 <div class="thumbnail">
-<p><a href="./posts/moa_key_considerations/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="./posts/moa_key_considerations/index.html" class="no-external"></a></p><a href="./posts/moa_key_considerations/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/moa_key_considerations/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/moa_key_considerations/index.html">
 <h3 class="no-anchor listing-title">
-Manual of authority (MoA) | What to include? and more importantly what not to include?
+<a href="./posts/moa_key_considerations/index.html" class="no-external">Manual of authority (MoA) | What to include? and more importantly what not to include?</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/moa_key_considerations/index.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-Do you…
+<a href="./posts/moa_key_considerations/index.html" class="no-external">Do you struggle with where to start, when developing or reviewing manual of authority? You are not alone and this article will help to make the process more structured and…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/moa_key_considerations/index.html">
+<a href="./posts/moa_key_considerations/index.html" class="no-external">
 <div class="listing-date">
 Aug 24, 2022
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-listing-date-sort="1658610000000" data-listing-file-modified-sort="1671887661802" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="18">
+<div class="quarto-post image-right" data-index="9" data-listing-date-sort="1658606400000" data-listing-file-modified-sort="1718537053535" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="18" data-listing-word-count-sort="3530">
 <div class="thumbnail">
-<p><a href="./posts/understanding_git/index.html"> <img src="./posts/understanding_git/images/versioncontrol_mindmap_with_license.png" class="thumbnail-image"> </a></p>
+<p><a href="./posts/understanding_git/index.html" class="no-external"></a></p><a href="./posts/understanding_git/index.html" class="no-external">
+<p><img src="./posts/understanding_git/images/versioncontrol_mindmap_with_license.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/understanding_git/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/understanding_git/index.html">
 <h3 class="no-anchor listing-title">
-Understanding Version Control, Git &amp; Github
+<a href="./posts/understanding_git/index.html" class="no-external">Understanding Version Control, Git &amp; Github</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/understanding_git/index.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-This blog is aimed at novices who…
+<a href="./posts/understanding_git/index.html" class="no-external">This blog is aimed at novices who are taking their first plunge in understanding and applying version control using git and github. It is suggested to use the mind map and…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/understanding_git/index.html">
+<a href="./posts/understanding_git/index.html" class="no-external">
 <div class="listing-date">
 Jul 24, 2022
 </div>
@@ -392,50 +460,50 @@ Ahsan Iftikhar
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="9" data-listing-date-sort="1655845200000" data-listing-file-modified-sort="1671887661786" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="10" data-listing-date-sort="1655841600000" data-listing-file-modified-sort="1718537053487" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="458">
 <div class="thumbnail">
-<p><a href="./posts/pie_chart_using_ggplot/index.html"> <p class="card-img-top"><img src="posts\pie_chart_using_ggplot\staticunnamed-chunk-1-1.png"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="./posts/pie_chart_using_ggplot/index.html" class="no-external"></a></p><a href="./posts/pie_chart_using_ggplot/index.html" class="no-external">
+<p class="card-img-top"><img src="posts\pie_chart_using_ggplot\staticunnamed-chunk-1-1.png"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/pie_chart_using_ggplot/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/pie_chart_using_ggplot/index.html">
 <h3 class="no-anchor listing-title">
-Making pie chart using ggplot
+<a href="./posts/pie_chart_using_ggplot/index.html" class="no-external">Making pie chart using ggplot</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/pie_chart_using_ggplot/index.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-A chart depicted by a circle, where the areas of the…
+<a href="./posts/pie_chart_using_ggplot/index.html" class="no-external">A chart depicted by a circle, where the areas of the circle represent 100% proportion. To subdivide the circle into proportion, a line is drawn from axis to the…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/pie_chart_using_ggplot/index.html">
+<a href="./posts/pie_chart_using_ggplot/index.html" class="no-external">
 <div class="listing-date">
 Jun 22, 2022
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="10" data-listing-date-sort="1653166800000" data-listing-file-modified-sort="1671887661802" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="11" data-listing-date-sort="1653163200000" data-listing-file-modified-sort="1718537053537" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="143">
 <div class="thumbnail">
-<p><a href="./posts/using_ssh_to_connect_to_github/index.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="./posts/using_ssh_to_connect_to_github/index.html" class="no-external"></a></p><a href="./posts/using_ssh_to_connect_to_github/index.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/using_ssh_to_connect_to_github/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/using_ssh_to_connect_to_github/index.html">
 <h3 class="no-anchor listing-title">
-Using SSH to connect to Github
+<a href="./posts/using_ssh_to_connect_to_github/index.html" class="no-external">Using SSH to connect to Github</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/using_ssh_to_connect_to_github/index.html" class="no-external"></a>
 </div>
 <div class="listing-description">
-Since github has introduced Personal Access Token (PAT) for…
+<a href="./posts/using_ssh_to_connect_to_github/index.html" class="no-external">Since github has introduced Personal Access Token (PAT) for security reasons, I find it extremely challenging to connect with github, using PAT, to maintain this blog.…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/using_ssh_to_connect_to_github/index.html">
+<a href="./posts/using_ssh_to_connect_to_github/index.html" class="no-external">
 <div class="listing-date">
 May 22, 2022
 </div>
@@ -526,10 +594,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -539,8 +624,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -552,7 +646,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -596,6 +813,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -621,6 +839,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -681,6 +925,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 
