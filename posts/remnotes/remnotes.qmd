@@ -1,0 +1,22 @@
+---
+title: "RemNotes & Why I use it"
+date: "2023-08-05"
+---
+
+
+Remnote is a powerful notes taking program which is available both as on online version and as a web application.
+
+Key features of the applications are
+- Ability to link notes
+- Configuring notes for space repetition
+- Good PDF notes taking editor which allows to take notes while reading a document.
+- Defining your own templates to structure your notes
+- Pleasant UI for all you notes.
+
+Complete details of all the features are available on the [RemNotes Website](https://www.remnote.com)
+
+
+There are other options, however, in my view Remnote is the best. I believe I was one of the early adopters and I have seen the evolution over the years. Continuously new features are being added and this has greatly improved the overall value proposition offered by Remnote.
+
+
+Lastly you can try the application [using this link](remnote.com/invite/60f65f97f604220034a2a283). This will give me some credit, however, seeking credit is not the reason to post this link. I genuinely love Remnote and I believe it one the best tool.
