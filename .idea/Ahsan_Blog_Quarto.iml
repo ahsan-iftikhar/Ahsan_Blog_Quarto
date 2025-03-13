@@ -2,18 +2,7 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$USER_HOME$/DataspellProjects/bod_survey_2022" />
-    <content url="file://$USER_HOME$/DataspellProjects/delete_later" />
-    <content url="file://$USER_HOME$/DataspellProjects/oman_open_data_viz" />
-    <content url="file://$USER_HOME$/DataspellProjects/shiny_python_learning" />
-    <content url="file://$USER_HOME$/DataspellProjects/tawal_system_utilization" />
     <content url="file://$MODULE_DIR$" />
-    <content url="file://$MODULE_DIR$/../Audit_Analytics" />
-    <content url="file://$MODULE_DIR$/../all_purpose_testing" />
-    <content url="file://$MODULE_DIR$/../aluminium_manufacturing" />
-    <content url="file://$MODULE_DIR$/../functional_programming" />
-    <content url="file://$MODULE_DIR$/../pwc_practice_mgmt" />
-    <content url="file://$MODULE_DIR$/../revenue_assurance" />
     <orderEntry type="jdk" jdkName="Python 3.10 (shiny_python_learning)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
