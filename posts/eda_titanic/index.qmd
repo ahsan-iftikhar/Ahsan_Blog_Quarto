@@ -6,12 +6,7 @@ date: "2023-07-02"
 
 ```{r}
 library(tidyverse)
+print('New updates are being pushed and reflected')
 head(iris)
-
-```
-
-```{python}
-
-print(1+1)
 
 ```

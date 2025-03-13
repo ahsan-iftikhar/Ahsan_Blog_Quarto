@@ -1,5 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_22" project-jdk-name="Python 3.12" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_22" project-jdk-name="Python 3.13 (eda_projects)" project-jdk-type="Python SDK" />
   <component name="PyCharmDSProjectLayout">
     <option name="id" value="JupyterRightHiddenStructureLayout" />
   </component>
@@ -13,10 +14,38 @@
             </RMarkdownRenderProfile>
           </value>
         </entry>
+        <entry key="file://$PROJECT_DIR$/about.qmd">
+          <value>
+            <RMarkdownRenderProfile>
+              <option name="outputDirectoryUrl" value="file://$PROJECT_DIR$" />
+            </RMarkdownRenderProfile>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/index.qmd">
+          <value>
+            <RMarkdownRenderProfile>
+              <option name="outputDirectoryUrl" value="file://$PROJECT_DIR$" />
+            </RMarkdownRenderProfile>
+          </value>
+        </entry>
         <entry key="file://$PROJECT_DIR$/posts/ammonia_&amp;_urea_manufacturing/ammonia_&amp;_urea_manufacturing.qmd">
           <value>
             <RMarkdownRenderProfile>
               <option name="outputDirectoryUrl" value="file://$PROJECT_DIR$/posts/ammonia_&amp;_urea_manufacturing" />
+            </RMarkdownRenderProfile>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/posts/ammonia_&amp;_urea_manufacturing/index.qmd">
+          <value>
+            <RMarkdownRenderProfile>
+              <option name="outputDirectoryUrl" value="file://$PROJECT_DIR$/posts/ammonia_&amp;_urea_manufacturing" />
+            </RMarkdownRenderProfile>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/posts/eda_titanic/index.qmd">
+          <value>
+            <RMarkdownRenderProfile>
+              <option name="outputDirectoryUrl" value="file://$PROJECT_DIR$/posts/eda_titanic" />
             </RMarkdownRenderProfile>
           </value>
         </entry>

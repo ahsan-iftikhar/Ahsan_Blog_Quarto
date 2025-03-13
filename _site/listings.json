@@ -2,11 +2,12 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/ammonia_&_urea_manufacturing/ammonia_&_urea_manufacturing.html",
+      "/posts/ammonia_&_urea_manufacturing/index.html",
+      "/posts/remnotes/index.html",
       "/posts/remnotes/remnotes.html",
       "/posts/file_n_folder_mgmt/index.html",
       "/posts/eda_titanic/index.html",
-      "/posts/board_evaluation/bod_evaluation.html",
+      "/posts/board_evaluation/index.html",
       "/posts/balanced_scorecard/index.html",
       "/posts/bar_chart_using_ggplot/index.html",
       "/posts/financial_formulas/index.html",
