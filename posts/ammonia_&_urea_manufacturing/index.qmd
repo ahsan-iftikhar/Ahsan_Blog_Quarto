@@ -6,4 +6,6 @@ date: "2024-07-20"
 # Introduction
 
 Checking.
-I have updated some text here, just to check if the project is getting updated
+I have updated some text here, just to check if the project is getting updated.
+
+This is the 2nd line of updates that I have done

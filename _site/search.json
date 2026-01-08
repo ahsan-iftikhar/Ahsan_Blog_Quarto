@@ -1,17 +1,17 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "posts/using_ssh_to_connect_to_github/index.html",
+    "href": "posts/using_ssh_to_connect_to_github/index.html",
+    "title": "Using SSH to connect to Github",
     "section": "",
-    "text": "Blog Expectations A brief statement about objectives and what to expect from this blog\nWriting and teaching is an exploratory and insightful journey for better understanding and assimilation of knowledge. This blog aims to share my learning journey. Following expectations defines the content in this blog.\n\nMost of the content will focus on areas like data science, tools & technologies and generating valuable insights.\nIn addition, it will feature topics on business, strategy, finance and audit.\nIn almost all the cases, I will not be the originator of knowledge and content, rather it’s an attempt to share my understanding and insights. All original authors and content writers will be adequately referenced.\n\nImportant: None of the posts shared on this blog represent a professional advise. Its rather my perspectives and opinions, which often change frequently. Treat the posts on this blog, as occasional conversations from a friend who is trying to provide or get a better understanding."
+    "text": "Since github has introduced Personal Access Token (PAT) for security reasons, I find it extremely challenging to connect with github, using PAT, to maintain this blog. Github recommends PAT, however, I find SSH to be much more convenient.\nThe following blog post tries to support anyone who wishes to use SSH.\n\nGenerating the public and private key (either on Linux or WSL on Windows)\n\n\nssh-keygen -t ed25519 -C \"Description for you Reference\"\n\nSelect all the defaults while creating the public key. It is recommended to define a passphrase.\n\nActivating ssh-agent\n\n\neval \"$(ssh-agent -s)\"\n\n\nAdding the key\n\n\nssh-add ~/.ssh/id_ed25519\n\n\nCopy the key and add to Github\n\nCopy the public key using the following command and paste into github.\n\ncat ~/.ssh/ed25519.pub\n\nThe ssh public key has to be inserted into the setting section of github\n\nCheck if ssh connection is established github\n\n\nssh git@github.com"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Professional & Personal Blog",
+    "objectID": "posts/remnotes/remnotes.html",
+    "href": "posts/remnotes/remnotes.html",
+    "title": "RemNotes & Why I use it",
     "section": "",
-    "text": "Ammonia & Urea Manufacturing\n\n\n\n\n\n\n\n\n\n\n\nJul 20, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nRemNotes & Why I use it\n\n\n\n\n\n\n\n\n\n\n\nAug 5, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nRemNotes & Why I use it\n\n\n\n\n\n\n\n\n\n\n\nAug 5, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nFIle management for R projects\n\n\n\n\n\n\n\n\n\n\n\nAug 4, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nEDA for Titanic\n\n\n\n\n\n\n\n\n\n\n\nJul 2, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nBoard of Directors Evaluation\n\n\n\n\n\n\n\n\n\n\n\nDec 24, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nUnderstanding balanced scorecard\n\n\n\n\n\n\n\n\n\n\n\nSep 13, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nMaking bar chart using ggplot\n\n\n\n\n\n\n\n\n\n\n\nSep 13, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nFinancial Formulas\n\n\n\n\n\n\n\n\n\n\n\nSep 13, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nManual of authority (MoA) | What to include? and more importantly what not to include?\n\n\n\n\n\n\n\n\n\n\n\nAug 24, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nUnderstanding Version Control, Git & Github\n\n\n\n\n\n\n\n\n\n\n\nJul 24, 2022\n\n\nAhsan Iftikhar\n\n\n\n\n\n\n\n\n\n\n\n\nMaking pie chart using ggplot\n\n\n\n\n\n\n\n\n\n\n\nJun 22, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nUsing SSH to connect to Github\n\n\n\n\n\n\n\n\n\n\n\nMay 22, 2022\n\n\n\n\n\n\nNo matching items"
+    "text": "Remnote is a powerful notes taking program which is available both as on online version and as a web application.\nKey features of the applications are - Ability to link notes - Configuring notes for space repetition - Good PDF notes taking editor which allows to take notes while reading a document. - Defining your own templates to structure your notes - Pleasant UI for all you notes.\nComplete details of all the features are available on the RemNotes Website\nThere are other options, however, in my view Remnote is the best. I believe I was one of the early adopters and I have seen the evolution over the years. Continuously new features are being added and this has greatly improved the overall value proposition offered by Remnote.\nLastly you can try the application using this link. This will give me some credit, however, seeking credit is not the reason to post this link. I genuinely love Remnote and I believe it one the best tool."
   },
   {
     "objectID": "posts/pie_chart_using_ggplot/index.html",
@@ -28,6 +28,118 @@
     "text": "Donut chart\n\nggplot(data = df, mapping = aes(x = \"\", y = share, fill = brand)) +\n  geom_bar(stat = \"identity\", width = 1) +\n  coord_polar(theta = \"y\", start = 0) +\n  geom_text(aes(\n    label = str_c(round(share*100), \"%\")),\n    position = position_stack(vjust = 0.5)\n    ) +\n  theme_void() +\n  scale_fill_brewer(palette = \"Dark2\") +\n  labs(title = \"Manufacturer - Market Share\") +\n  theme(\n    plot.title = element_text(hjust = 0.5, color = \"red\")\n  )\n\n\n\n\n\n\n\n\n\nggplot(data = df, mapping = aes(x = 2, y = share, fill = brand)) +\n  geom_bar(stat = \"identity\", width = 1) +\n  coord_polar(theta = \"y\", start = 0) +\n  geom_text(aes(\n    label = str_c(round(share*100), \"%\")),\n    position = position_stack(vjust = 0.5)\n    ) +\n  theme_void() +\n  scale_fill_brewer(palette = \"Dark2\") +\n  labs(title = \"Manufacturer - Market Share\") +\n  theme(\n    plot.title = element_text(hjust = 0.5, color = \"red\")\n  ) +\n  xlim(0.5, 2.5)"
   },
   {
+    "objectID": "posts/financial_formulas/index.html",
+    "href": "posts/financial_formulas/index.html",
+    "title": "Financial Formulas",
+    "section": "",
+    "text": "A ready reference for financial formulas, enables to look-up the formula and it’s key input variables for ease in calculation and reference.\nFollowing key financial formulas are covered in this post.\nNote:"
+  },
+  {
+    "objectID": "posts/financial_formulas/index.html#rate-conversion",
+    "href": "posts/financial_formulas/index.html#rate-conversion",
+    "title": "Financial Formulas",
+    "section": "1. Rate Conversion",
+    "text": "1. Rate Conversion\n\n1. Periodic Rate of Return (PRR)\nAnnual rate is given and the objective is to convert to periodic rate i.e. convert annual rate of return to either monthly, quarterly or half-yearly return. This cannot be simply achieved by dividing the annual rate by the number of periods. The following formulas has to be used.\n\\[monthly \\space / \\space quarterly \\space / \\space biannually = (1+r)^{\\frac{1}{n}}-1\\] Where\n\nr = annual rate\nn = shorter period for which rate has to be obtained. Thus\n\nn = 12 for monthly\nn = 2 for bi-annually\nn = 4 for quarterly\n\n\nExamples\n\nConvert 17% annual rate to quarterly rate equivalent.\n\n\nSolution: Using the formula \\((1+r)^{\\frac{1}{n}}-1\\) wherein r = 0.17 and n = 4, the quarterly rate is 0.0400\n\n\n\n\n2. Effective Annual Rate (EAR)\n\nWhen compounding is done multiple times in a year and we are interested in finding EAR.\n\nFollowing formula gives the EAR when compounding is done n number of times.\n\\[EAR = (1+\\frac{r}{n})^n -1\\] Where\n\nr = interest rate / compounding period\nn = number of compounding periods\n\nn = 12 for monthly\nn = 2 for bi-annually\nn = 4 for quarterly\n\n\nExamples\n\nAnnual rate of return is 17% which is compounded twice a year. Calculate EAR.\n\n\nSolution: Using the formula \\((1+\\frac{r}{n})^n -1\\) the EAR is 0.1772\n\n\nEffective interest rate per compounding period (similar to PRR, however, in this case compounding is done multiple times in the year)\n\nThis second formula give the effective interest rate per compounding period.\n\\[R = (1+\\frac{r}{n})^\\frac{n}{p} -1\\] Where\n\np = No of payment periods per year\nr = nominal annual interest rate\nn = No. of compounding periods per year\nR = Rate per payment period\n\nExample\n\nAnnual rate of return is 17% which is compounded twice a year and payments are made quarterly. Calculate PRR.\n\n\nSolution: Using the formula \\((1+\\frac{r}{n})^\\frac{n}{p} -1\\) the PRR (with multiple compoundings in a year) is 0.0416"
+  },
+  {
+    "objectID": "posts/financial_formulas/index.html#discounting",
+    "href": "posts/financial_formulas/index.html#discounting",
+    "title": "Financial Formulas",
+    "section": "2. Discounting",
+    "text": "2. Discounting\n\n1. Present Value (PV)\nDescribe present value.\n\\[PV = (1 + r)^{-t}\\]\nWhere\n\nr = Annual rate of return\nt = Number of years\n\nExamples\n\nCalculate the present value of 3 year maturity instrument when the rate per annum is 18%.\n\n\nSolution: Using the formula, \\(PV = (1 + r)^{-t}\\) the PV discount value is 0.6086\n\n\n\n2. Present Value (compounded periodically)\nIn this case the formula is just the putting a negative in the exponent i.e. -nt\n\\[PV \\space factor = (1+\\frac{r}{n})^{-nt}\\] Where\n\nr = Annual rate of return\nn = Number of times compounding is done per year\nt = Number of years\n\n\nCalculate the present value of 3 year maturity instrument when the rate per annum is 18% and compounding is done quarterly.\n\n\nSolution: Using the formula, \\(PV = FV.(1+\\frac{r}{n})^{-nt}\\) the PV discount value is 0.1121\n\n\n\n3. Annuity Formula\nDescribe annuity.\n\\[Annuity \\space factor = [1 - \\frac{(1+r)^{-t}}{r}]\\]\nWhere\n\nr = Annual rate of return\nn = Number of times compounding is done per year\nt = Number of years\n\n\n\n3. Future value (compounded once a year)\n\\[PV = (1 + r)^{t}\\]\nWhere\n\nr = Annual rate of return\nt = Number of years\n\n\n\n4. Future Value (compounded periodically)\nCompounding Interest Rate (when compounding more frequent than on yearly basis)\nExamples are monthly, quarterly, bi-annually.\n\\[FV \\space factor = (1+\\frac{r}{n})^{nt}\\]\nWhere\n\nr = Annual interest rate\nn = number times compounding is done on a yearly basis\nt = time in years\n\nExamples"
+  },
+  {
+    "objectID": "posts/financial_formulas/index.html#loan-related",
+    "href": "posts/financial_formulas/index.html#loan-related",
+    "title": "Financial Formulas",
+    "section": "3. Loan Related",
+    "text": "3. Loan Related\n\n1. Loan Amortization Method\n\\[A = P\\frac{r(1+r)^n}{(1+r)^n-1}\\] Where\n\nA = payment amount per period\nP = Value of borrowed capital\nr = interest rate per period (it is important to calculate the interest rate for the period. Thus simply divide the annual rate with the number of times payment has to be made per period)\nn = total number of payments or periods\n\nExample\n\nA individual is desirous of taking a loan for USD 50,000. He wishes to settle it in 5 years, with monthly payments. Bank’s determines the interest rate of 14%, based on the risk profile of the individual. Calculate the monthly instalments due from the individual?\n\n\nSolution: Using the formula above \\(A = P\\frac{r(1+r)^n}{(1+r)^n-1}\\) and putting in the values the annuity payment per month is USD 1163.41"
+  },
+  {
+    "objectID": "posts/financial_formulas/index.html#derivative-related-formulas",
+    "href": "posts/financial_formulas/index.html#derivative-related-formulas",
+    "title": "Financial Formulas",
+    "section": "4. Derivative Related Formulas",
+    "text": "4. Derivative Related Formulas\n\n1. Forward Rate\n\\[F = S.ln^{(r_2-r_1).t}\\] Where\n\nF = Forward rate\nS = Spot rate (this is generally the closing rate for the date)\n\\(ln\\) = Base of the natural logarithms (2.718)\n\\(r_2\\) = interest free rate of the target currency in which the final settlement will be done.\n\\(r_1\\) = interest free rate of the host currency in which the transaction is done\nt = Time to final settlement (in years)\n\n\n\n2. Fair Value of Derivative\n\\[FV = A.(F-K).(e)^{-r_2.T}\\] Where\n\nFV = Fair value\nA = Amount in the host currency\nK = Strike price (the rate on which the final settlement will be done)\n\n\n\n3. Discounting based Fair Value / Present Value of Derivative\n\\[PV = A.exp(-r_2.T)\\] Where\n\nexp = exponent\n\n\n\n4. Floating Leg of Interest Rate Swaps\n\\[PV_{floating} = F - \\frac{F}{(1+\\frac{r}{n})^{nt}}\\]\nWhere\n\nF = Face value or notional amount\nr = interest rate (decimal)\nn = number of times interest is compounded per year.\nt = time (in years)"
+  },
+  {
+    "objectID": "posts/eda_titanic/index.html",
+    "href": "posts/eda_titanic/index.html",
+    "title": "EDA for Titanic",
+    "section": "",
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nprint('New updates are being pushed and reflected')\n\n[1] \"New updates are being pushed and reflected\"\n\nhead(iris)\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1          5.1         3.5          1.4         0.2  setosa\n2          4.9         3.0          1.4         0.2  setosa\n3          4.7         3.2          1.3         0.2  setosa\n4          4.6         3.1          1.5         0.2  setosa\n5          5.0         3.6          1.4         0.2  setosa\n6          5.4         3.9          1.7         0.4  setosa"
+  },
+  {
+    "objectID": "posts/bar_chart_using_ggplot/index.html",
+    "href": "posts/bar_chart_using_ggplot/index.html",
+    "title": "Making bar chart using ggplot",
+    "section": "",
+    "text": "A chart featuring the interaction of a categorical variable and it’s numercial value. More simply, the numercial values are represented by bars, whose length vary based on the value\n\nBar chart is more preferrable than pie charts and mostly better choice to compare values."
+  },
+  {
+    "objectID": "posts/bar_chart_using_ggplot/index.html#bar-chart",
+    "href": "posts/bar_chart_using_ggplot/index.html#bar-chart",
+    "title": "Making bar chart using ggplot",
+    "section": "Bar chart",
+    "text": "Bar chart\n\nggplot2::ggplot(data = df, mapping = aes(x = brand, y = share)) +\n  geom_bar(stat = \"identity\")\n\n\n\n\n\n\n\n\n\n# Move this to Abraj R File -----------------------------------------------\nsummary_obs &lt;- tibble(\n  rating = c(\"High\", \"Medium\", \"Low\"),\n  obs = c(0, 2, 7),\n  color = c(\"red\", \"yellow\", \"green\"),\n  ann = c(\"No high rated exception\", \" \", \" \")\n  )\n\n# summary_obs &lt;- summary_obs %&gt;%\n#   mutate(\n#     rating = factor(summary_obs$rating, levels = c(\"High\", \"Medium\", \"Low\"))\n#   )\n\nsummary_obs &lt;- summary_obs %&gt;%\n  mutate(\n    rating = as_factor(rating)\n  )\n\nggplot2::ggplot(data = summary_obs, aes(x = rating, y = obs)) +\n  geom_bar(stat = \"identity\", aes(fill = rating)) +\n  geom_text(aes(label = obs)) +\n  theme_minimal() +\n  scale_fill_manual(values = c(\"red\", \"yellow\", \"green\")) +\n  labs(title = \"Finance & Accounts Review\",\n       subtitle = \"Summary of observations by rating\",\n       x = \"Risk Rating\",\n       y = \"No. of Observations\"\n       ) +\n  theme(\n    legend.position = \"none\"\n  )"
+  },
+  {
+    "objectID": "posts/ammonia_&_urea_manufacturing/index.html",
+    "href": "posts/ammonia_&_urea_manufacturing/index.html",
+    "title": "Ammonia & Urea Manufacturing",
+    "section": "",
+    "text": "Introduction\nChecking. I have updated some text here, just to check if the project is getting updated"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Blog Expectations A brief statement about objectives and what to expect from this blog\nWriting and teaching is an exploratory and insightful journey for better understanding and assimilation of knowledge. This blog aims to share my learning journey. Following expectations defines the content in this blog.\n\nMost of the content will focus on areas like data science, tools & technologies and generating valuable insights.\nIn addition, it will feature topics on business, strategy, finance and audit.\nIn almost all the cases, I will not be the originator of knowledge and content, rather it’s an attempt to share my understanding and insights. All original authors and content writers will be adequately referenced.\n\nImportant: None of the posts shared on this blog represent a professional advise. Its rather my perspectives and opinions, which often change frequently. Treat the posts on this blog, as occasional conversations from a friend who is trying to provide or get a better understanding."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Professional & Personal Blog",
+    "section": "",
+    "text": "Ammonia & Urea Manufacturing\n\n\n\n\n\n\n\n\nJul 20, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nRemNotes & Why I use it\n\n\n\n\n\n\n\n\nAug 5, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nRemNotes & Why I use it\n\n\n\n\n\n\n\n\nAug 5, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nFIle management for R projects\n\n\n\n\n\n\n\n\nAug 4, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nEDA for Titanic\n\n\n\n\n\n\n\n\nJul 2, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nBoard of Directors Evaluation\n\n\n\n\n\n\n\n\nDec 24, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nUnderstanding balanced scorecard\n\n\n\n\n\n\n\n\nSep 13, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nMaking bar chart using ggplot\n\n\n\n\n\n\n\n\nSep 13, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nFinancial Formulas\n\n\n\n\n\n\n\n\nSep 13, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nManual of authority (MoA) | What to include? and more importantly what not to include?\n\n\n\n\n\n\n\n\nAug 24, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nUnderstanding Version Control, Git & Github\n\n\n\n\n\n\n\n\nJul 24, 2022\n\n\nAhsan Iftikhar\n\n\n\n\n\n\n\n\n\n\n\n\nMaking pie chart using ggplot\n\n\n\n\n\n\n\n\nJun 22, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nUsing SSH to connect to Github\n\n\n\n\n\n\n\n\nMay 22, 2022\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/balanced_scorecard/index.html",
+    "href": "posts/balanced_scorecard/index.html",
+    "title": "Understanding balanced scorecard",
+    "section": "",
+    "text": "Introduction\n\nTraditional performance measurement metrics over emphasize financial KPIs to the detriment of other key considerations, which are important from strategic and sustainability perspective.\nIn addition to the financial aspects, balanced scorecard considers three key important considerations i.e. internal business processes, learning and growth and customer.\n\n\n\nKey tenants of balanced scorecard\n\nKey perspectives of balanced scorecard and how KPIs are defined in each are stated below.\nFinancial: To succeed financially, how should we appear to our investment stakeholders (equity or debt)\n\nObjectives\nMeasures\nTargets\nInitiatives\n\nInternal business process: To satisfy business objectives what internal business processes must the entity excel at\n\nObjectives\nMeasures\nTargets\nInitiatives\n\nLearning and growth: Aligned with entity’s vision and plans, what learning and growth interventions should be pursued, which will ensure sustainability and gradual improvement.\n\nObjectives\nMeasures\nTargets\nInitiatives\n\nCustomers: How should a company be perceived by it’s customers\n\nObjectives\nMeasures\nTargets\nInitiatives\n\n\n\n\nTypical workflow in setting balanced scorecard\nAn over simplified workflow to understand the process of setting balanced scorecard is stated below\n\n\n\nFlowchart"
+  },
+  {
+    "objectID": "posts/file_n_folder_mgmt/index.html",
+    "href": "posts/file_n_folder_mgmt/index.html",
+    "title": "FIle management for R projects",
+    "section": "",
+    "text": "Reading and writing files can sometimes be challenging. This is an attempt to share the process I am following for making it easy to reading and writing of files in R.\n\n\n\nlibrary(pacman)\npacman::p_load(fs, folderfun, tidyverse)\n\n\n\n\nI have found the package folder function package and fs package to be very useful for file managing files.\n\nfs::path() will be used to construct the path of the location folder\nfolderfun::setff() will be used to define a new function, wherein the first argument is the name of the new function prceded by ff.\n\n\n# Defining the input function\nfolderfun::setff(name = 'In',\n                 fs::path(\"C:/Users/aqureshi037/PycharmProjects/Ahsan_Blog_Quarto\",\n                          \"posts\", \"file_n_folder_Mgmt\", \"input_data\")\n                 )\n\nCreated folder function ffIn(): C:/Users/aqureshi037/PycharmProjects/Ahsan_Blog_Quarto/posts/file_n_folder_Mgmt/input_data\n\n# Defining the ourput function\nfolderfun::setff(name = 'Out',\n                 fs::path(\"C:/Users/aqureshi037/PycharmProjects/Ahsan_Blog_Quarto\",\n                          \"posts\", \"file_n_folder_Mgmt\", \"output_data\")\n                 )\n\nCreated folder function ffOut(): C:/Users/aqureshi037/PycharmProjects/Ahsan_Blog_Quarto/posts/file_n_folder_Mgmt/output_data\n\n\n\n\n\niris.csv file is already located in the ‘input’ folder.\n\ndata(iris)\n\n#Writing the data to the folder\nreadr::write_csv(iris, ffOut(\"iris.csv\"))\n\n\n#Reading the data from the folder\niris_data &lt;- readr::read_csv(ffIn(\"iris.csv\"))\n\nRows: 150 Columns: 5\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (1): Species\ndbl (4): Sepal.Length, Sepal.Width, Petal.Length, Petal.Width\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message."
+  },
+  {
+    "objectID": "posts/file_n_folder_mgmt/index.html#reading-required-packages.",
+    "href": "posts/file_n_folder_mgmt/index.html#reading-required-packages.",
+    "title": "FIle management for R projects",
+    "section": "",
+    "text": "library(pacman)\npacman::p_load(fs, folderfun, tidyverse)"
+  },
+  {
+    "objectID": "posts/file_n_folder_mgmt/index.html#define-the-path-wherein-the-input-and-output-will-be-located-in-the-local-drive.",
+    "href": "posts/file_n_folder_mgmt/index.html#define-the-path-wherein-the-input-and-output-will-be-located-in-the-local-drive.",
+    "title": "FIle management for R projects",
+    "section": "",
+    "text": "I have found the package folder function package and fs package to be very useful for file managing files.\n\nfs::path() will be used to construct the path of the location folder\nfolderfun::setff() will be used to define a new function, wherein the first argument is the name of the new function prceded by ff.\n\n\n# Defining the input function\nfolderfun::setff(name = 'In',\n                 fs::path(\"C:/Users/aqureshi037/PycharmProjects/Ahsan_Blog_Quarto\",\n                          \"posts\", \"file_n_folder_Mgmt\", \"input_data\")\n                 )\n\nCreated folder function ffIn(): C:/Users/aqureshi037/PycharmProjects/Ahsan_Blog_Quarto/posts/file_n_folder_Mgmt/input_data\n\n# Defining the ourput function\nfolderfun::setff(name = 'Out',\n                 fs::path(\"C:/Users/aqureshi037/PycharmProjects/Ahsan_Blog_Quarto\",\n                          \"posts\", \"file_n_folder_Mgmt\", \"output_data\")\n                 )\n\nCreated folder function ffOut(): C:/Users/aqureshi037/PycharmProjects/Ahsan_Blog_Quarto/posts/file_n_folder_Mgmt/output_data"
+  },
+  {
+    "objectID": "posts/file_n_folder_mgmt/index.html#reading-of-the-file",
+    "href": "posts/file_n_folder_mgmt/index.html#reading-of-the-file",
+    "title": "FIle management for R projects",
+    "section": "",
+    "text": "iris.csv file is already located in the ‘input’ folder.\n\ndata(iris)\n\n#Writing the data to the folder\nreadr::write_csv(iris, ffOut(\"iris.csv\"))\n\n\n#Reading the data from the folder\niris_data &lt;- readr::read_csv(ffIn(\"iris.csv\"))\n\nRows: 150 Columns: 5\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (1): Species\ndbl (4): Sepal.Length, Sepal.Width, Petal.Length, Petal.Width\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message."
+  },
+  {
     "objectID": "posts/moa_key_considerations/index.html",
     "href": "posts/moa_key_considerations/index.html",
     "title": "Manual of authority (MoA) | What to include? and more importantly what not to include?",
@@ -42,11 +154,11 @@
     "text": "Activities crossing functional and departmental boundaries\nAny significant activity which crosses departmental or functional boundaries should not be stated in the manual of authority. On the contrary any activity which does not cross departmental or functional boundaries should be managed through departmental procedures; which can be approved by the Functional Head or CEO of the the organization.\nMany a times, activities related to operational approvals within the same department are stated in MoA, thus rendering the MoA very extensive, in-comprehensible and un-maintainable. The bigger risk is that such a MoA, wherein due care for the above mentioned point is not take, will be fully implemented."
   },
   {
-    "objectID": "posts/moa_key_considerations/index.html#acceptance-rejection-rule",
-    "href": "posts/moa_key_considerations/index.html#acceptance-rejection-rule",
-    "title": "Manual of authority, key cosiderations",
-    "section": "Acceptance & rejection rule",
-    "text": "Acceptance & rejection rule\nThe activity should represent significant activity which can be accepted or rejected. This implies that procedural activities which are routine in nature and does not require explicit approval should not included in the delegation of authority."
+    "objectID": "posts/moa_key_considerations/index.html#acceptance-rejection-rule-for-activities",
+    "href": "posts/moa_key_considerations/index.html#acceptance-rejection-rule-for-activities",
+    "title": "Manual of authority (MoA) | What to include? and more importantly what not to include?",
+    "section": "Acceptance & rejection rule (for activities)",
+    "text": "Acceptance & rejection rule (for activities)\nThe second key rule which determines if you should include the activity in MoA is - the activity should represent an activity which can be accepted or rejected. This implies that an element of review, judgement and prudence must be exercised by the person reviewing and approving the activity. Procedural activities which are routine in nature and does not require explicit approval should not included in MoA."
   },
   {
     "objectID": "posts/moa_key_considerations/index.html#only-key-activities-having-significant-operational-and-financial-impact",
@@ -54,6 +166,13 @@
     "title": "Manual of authority (MoA) | What to include? and more importantly what not to include?",
     "section": "Only key activities having significant operational and financial impact",
     "text": "Only key activities having significant operational and financial impact\nAlthough determination of significance is a matter of judgment, however, effort should be made to only include the activities which materially impact the operations and have significant financial impact."
+  },
+  {
+    "objectID": "posts/remnotes/index.html",
+    "href": "posts/remnotes/index.html",
+    "title": "RemNotes & Why I use it",
+    "section": "",
+    "text": "Remnote is a powerful notes taking program which is available both as on online version and as a web application.\nKey features of the applications are - Ability to link notes - Configuring notes for space repetition - Good PDF notes taking editor which allows to take notes while reading a document. - Defining your own templates to structure your notes - Pleasant UI for all you notes.\nComplete details of all the features are available on the RemNotes Website\nThere are other options, however, in my view Remnote is the best. I believe I was one of the early adopters and I have seen the evolution over the years. Continuously new features are being added and this has greatly improved the overall value proposition offered by Remnote.\nLastly you can try the application using this link. This will give me some credit, however, seeking credit is not the reason to post this link. I genuinely love Remnote and I believe it one the best tool."
   },
   {
     "objectID": "posts/understanding_git/index.html",
@@ -222,145 +341,5 @@
     "title": "Understanding Version Control, Git & Github",
     "section": "Managing conflicts",
     "text": "Managing conflicts\nMerging is a challenging process wherein we have to merge and resolve the conflict. The chronology of the steps is: merge first, then use the diff command to identify and resolve conflicts.\n\nUse the git merge source destination to merge two files. In this case, source is the branch on which one is working whereas destination is the branch on which we want to eventually update all the changes.\n\nIn this case we will get notice that “Automatic merge failed; fix conflicts and then commit the result.”\n\nAfter merging use git diff source destination to identify all the differences.\nThen we have to manually adjust any conflicts that have been made using the nano text editor. The conflict is highlighted in the following format and it is user’s role to retain the correct modification from the following error.\n\nWhile making the edits, delete Git markers i.e. &lt;&lt;&lt;&lt;&lt;&lt;&lt;, ========= and &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; and the changes which have to be deleted.\n\n&lt;&lt;&lt;&lt;&lt;&lt;&lt; destination-branch-name\n...changes from the destination branch...\n=======\n...changes from the source branch...\n&gt;&gt;&gt;&gt;&gt;&gt;&gt; source-branch-name\n\nOnce the conflicts have been resolved then we add and commit the updated file."
-  },
-  {
-    "objectID": "posts/using_ssh_to_connect_to_github/index.html",
-    "href": "posts/using_ssh_to_connect_to_github/index.html",
-    "title": "Using SSH to connect to Github",
-    "section": "",
-    "text": "Since github has introduced Personal Access Token (PAT) for security reasons, I find it extremely challenging to connect with github, using PAT, to maintain this blog. Github recommends PAT, however, I find SSH to be much more convenient.\nThe following blog post tries to support anyone who wishes to use SSH.\n\nGenerating the public and private key (either on Linux or WSL on Windows)\n\n\nssh-keygen -t ed25519 -C \"Description for you Reference\"\n\nSelect all the defaults while creating the public key. It is recommended to define a passphrase.\n\nActivating ssh-agent\n\n\neval \"$(ssh-agent -s)\"\n\n\nAdding the key\n\n\nssh-add ~/.ssh/id_ed25519\n\n\nCopy the key and add to Github\n\nCopy the public key using the following command and paste into github.\n\ncat ~/.ssh/ed25519.pub\n\nThe ssh public key has to be inserted into the setting section of github\n\nCheck if ssh connection is established github\n\n\nssh git@github.com"
-  },
-  {
-    "objectID": "posts/financial_formulas/index.html",
-    "href": "posts/financial_formulas/index.html",
-    "title": "Financial Formulas",
-    "section": "",
-    "text": "A ready reference for financial formulas, enables to look-up the formula and it’s key input variables for ease in calculation and reference.\nFollowing key financial formulas are covered in this post.\nNote:"
-  },
-  {
-    "objectID": "posts/financial_formulas/index.html#rate-conversion",
-    "href": "posts/financial_formulas/index.html#rate-conversion",
-    "title": "Financial Formulas",
-    "section": "1. Rate Conversion",
-    "text": "1. Rate Conversion\n\n1. Periodic Rate of Return (PRR)\nAnnual rate is given and the objective is to convert to periodic rate i.e. convert annual rate of return to either monthly, quarterly or half-yearly return. This cannot be simply achieved by dividing the annual rate by the number of periods. The following formulas has to be used.\n\\[monthly \\space / \\space quarterly \\space / \\space biannually = (1+r)^{\\frac{1}{n}}-1\\] Where\n\nr = annual rate\nn = shorter period for which rate has to be obtained. Thus\n\nn = 12 for monthly\nn = 2 for bi-annually\nn = 4 for quarterly\n\n\nExamples\n\nConvert 17% annual rate to quarterly rate equivalent.\n\n\nSolution: Using the formula \\((1+r)^{\\frac{1}{n}}-1\\) wherein r = 0.17 and n = 4, the quarterly rate is 0.0400\n\n\n\n\n2. Effective Annual Rate (EAR)\n\nWhen compounding is done multiple times in a year and we are interested in finding EAR.\n\nFollowing formula gives the EAR when compounding is done n number of times.\n\\[EAR = (1+\\frac{r}{n})^n -1\\] Where\n\nr = interest rate / compounding period\nn = number of compounding periods\n\nn = 12 for monthly\nn = 2 for bi-annually\nn = 4 for quarterly\n\n\nExamples\n\nAnnual rate of return is 17% which is compounded twice a year. Calculate EAR.\n\n\nSolution: Using the formula \\((1+\\frac{r}{n})^n -1\\) the EAR is 0.1772\n\n\nEffective interest rate per compounding period (similar to PRR, however, in this case compounding is done multiple times in the year)\n\nThis second formula give the effective interest rate per compounding period.\n\\[R = (1+\\frac{r}{n})^\\frac{n}{p} -1\\] Where\n\np = No of payment periods per year\nr = nominal annual interest rate\nn = No. of compounding periods per year\nR = Rate per payment period\n\nExample\n\nAnnual rate of return is 17% which is compounded twice a year and payments are made quarterly. Calculate PRR.\n\n\nSolution: Using the formula \\((1+\\frac{r}{n})^\\frac{n}{p} -1\\) the PRR (with multiple compoundings in a year) is 0.0416"
-  },
-  {
-    "objectID": "posts/financial_formulas/index.html#discounting",
-    "href": "posts/financial_formulas/index.html#discounting",
-    "title": "Financial Formulas",
-    "section": "2. Discounting",
-    "text": "2. Discounting\n\n1. Present Value (PV)\nDescribe present value.\n\\[PV = (1 + r)^{-t}\\]\nWhere\n\nr = Annual rate of return\nt = Number of years\n\nExamples\n\nCalculate the present value of 3 year maturity instrument when the rate per annum is 18%.\n\n\nSolution: Using the formula, \\(PV = (1 + r)^{-t}\\) the PV discount value is 0.6086\n\n\n\n2. Present Value (compounded periodically)\nIn this case the formula is just the putting a negative in the exponent i.e. -nt\n\\[PV \\space factor = (1+\\frac{r}{n})^{-nt}\\] Where\n\nr = Annual rate of return\nn = Number of times compounding is done per year\nt = Number of years\n\n\nCalculate the present value of 3 year maturity instrument when the rate per annum is 18% and compounding is done quarterly.\n\n\nSolution: Using the formula, \\(PV = FV.(1+\\frac{r}{n})^{-nt}\\) the PV discount value is 0.1121\n\n\n\n3. Annuity Formula\nDescribe annuity.\n\\[Annuity \\space factor = [1 - \\frac{(1+r)^{-t}}{r}]\\]\nWhere\n\nr = Annual rate of return\nn = Number of times compounding is done per year\nt = Number of years\n\n\n\n3. Future value (compounded once a year)\n\\[PV = (1 + r)^{t}\\]\nWhere\n\nr = Annual rate of return\nt = Number of years\n\n\n\n4. Future Value (compounded periodically)\nCompounding Interest Rate (when compounding more frequent than on yearly basis)\nExamples are monthly, quarterly, bi-annually.\n\\[FV \\space factor = (1+\\frac{r}{n})^{nt}\\]\nWhere\n\nr = Annual interest rate\nn = number times compounding is done on a yearly basis\nt = time in years\n\nExamples"
-  },
-  {
-    "objectID": "posts/financial_formulas/index.html#loan-related",
-    "href": "posts/financial_formulas/index.html#loan-related",
-    "title": "Financial Formulas",
-    "section": "3. Loan Related",
-    "text": "3. Loan Related\n\n1. Loan Amortization Method\n\\[A = P\\frac{r(1+r)^n}{(1+r)^n-1}\\] Where\n\nA = payment amount per period\nP = Value of borrowed capital\nr = interest rate per period (it is important to calculate the interest rate for the period. Thus simply divide the annual rate with the number of times payment has to be made per period)\nn = total number of payments or periods\n\nExample\n\nA individual is desirous of taking a loan for USD 50,000. He wishes to settle it in 5 years, with monthly payments. Bank’s determines the interest rate of 14%, based on the risk profile of the individual. Calculate the monthly instalments due from the individual?\n\n\nSolution: Using the formula above \\(A = P\\frac{r(1+r)^n}{(1+r)^n-1}\\) and putting in the values the annuity payment per month is USD 1163.41"
-  },
-  {
-    "objectID": "posts/financial_formulas/index.html#derivative-related-formulas",
-    "href": "posts/financial_formulas/index.html#derivative-related-formulas",
-    "title": "Financial Formulas",
-    "section": "4. Derivative Related Formulas",
-    "text": "4. Derivative Related Formulas\n\n1. Forward Rate\n\\[F = S.ln^{(r_2-r_1).t}\\] Where\n\nF = Forward rate\nS = Spot rate (this is generally the closing rate for the date)\n\\(ln\\) = Base of the natural logarithms (2.718)\n\\(r_2\\) = interest free rate of the target currency in which the final settlement will be done.\n\\(r_1\\) = interest free rate of the host currency in which the transaction is done\nt = Time to final settlement (in years)\n\n\n\n2. Fair Value of Derivative\n\\[FV = A.(F-K).(e)^{-r_2.T}\\] Where\n\nFV = Fair value\nA = Amount in the host currency\nK = Strike price (the rate on which the final settlement will be done)\n\n\n\n3. Discounting based Fair Value / Present Value of Derivative\n\\[PV = A.exp(-r_2.T)\\] Where\n\nexp = exponent\n\n\n\n4. Floating Leg of Interest Rate Swaps\n\\[PV_{floating} = F - \\frac{F}{(1+\\frac{r}{n})^{nt}}\\]\nWhere\n\nF = Face value or notional amount\nr = interest rate (decimal)\nn = number of times interest is compounded per year.\nt = time (in years)"
-  },
-  {
-    "objectID": "posts/balanced_scorecard/balanced_scorecard.html",
-    "href": "posts/balanced_scorecard/balanced_scorecard.html",
-    "title": "Understanding balanced scorecard",
-    "section": "",
-    "text": "Introduction\n\nTraditional performance measurement metrics over emphasize financial KPIs to the detriment of other key considerations, which are important from strategic and sustainability perspective.\nIn addition to the financial aspects, balanced scorecard considers three key important considerations i.e. internal business processes, learning and growth and customer.\n\n\n\nKey tenants of balanced scorecard\n\nKey perspectives of balanced scorecard and how KPIs are defined in each are stated below.\nFinancial: To succeed financially, how should we appear to our investment stakeholders (equity or debt)\n\nObjectives\nMeasures\nTargets\nInitiatives\n\nInternal business process: To satisfy business objectives what internal business processes must the entity excel at\n\nObjectives\nMeasures\nTargets\nInitiatives\n\nLearning and growth: Aligned with entity’s vision and plans, what learning and growth interventions should be pursued, which will ensure sustainability and gradual improvement.\n\nObjectives\nMeasures\nTargets\nInitiatives\n\nCustomers: How should a company be perceived by it’s customers\n\nObjectives\nMeasures\nTargets\nInitiatives\n\n\n\n\nTypical workflow in setting balanced scorecard\nAn over simplified workflow to understand the process of setting balanced scorecard is stated below\n\n\n\nFlow Chart"
-  },
-  {
-    "objectID": "posts/bar_chart_using_ggplot/index.html",
-    "href": "posts/bar_chart_using_ggplot/index.html",
-    "title": "Making bar chart using ggplot",
-    "section": "",
-    "text": "A chart featuring the interaction of a categorical variable and it’s numercial value. More simply, the numercial values are represented by bars, whose length vary based on the value\n\nBar chart is more preferrable than pie charts and mostly better choice to compare values."
-  },
-  {
-    "objectID": "posts/bar_chart_using_ggplot/index.html#bar-chart",
-    "href": "posts/bar_chart_using_ggplot/index.html#bar-chart",
-    "title": "Making bar chart using ggplot",
-    "section": "Bar chart",
-    "text": "Bar chart\n\nggplot2::ggplot(data = df, mapping = aes(x = brand, y = share)) +\n  geom_bar(stat = \"identity\")\n\n\n\n\n\n\n\n\n\n# Move this to Abraj R File -----------------------------------------------\nsummary_obs &lt;- tibble(\n  rating = c(\"High\", \"Medium\", \"Low\"),\n  obs = c(0, 2, 7),\n  color = c(\"red\", \"yellow\", \"green\"),\n  ann = c(\"No high rated exception\", \" \", \" \")\n  )\n\n# summary_obs &lt;- summary_obs %&gt;%\n#   mutate(\n#     rating = factor(summary_obs$rating, levels = c(\"High\", \"Medium\", \"Low\"))\n#   )\n\nsummary_obs &lt;- summary_obs %&gt;%\n  mutate(\n    rating = as_factor(rating)\n  )\n\nggplot2::ggplot(data = summary_obs, aes(x = rating, y = obs)) +\n  geom_bar(stat = \"identity\", aes(fill = rating)) +\n  geom_text(aes(label = obs)) +\n  theme_minimal() +\n  scale_fill_manual(values = c(\"red\", \"yellow\", \"green\")) +\n  labs(title = \"Finance & Accounts Review\",\n       subtitle = \"Summary of observations by rating\",\n       x = \"Risk Rating\",\n       y = \"No. of Observations\"\n       ) +\n  theme(\n    legend.position = \"none\"\n  )"
-  },
-  {
-    "objectID": "posts/moa_key_considerations/index.html#acceptance-rejection-rule-for-activities",
-    "href": "posts/moa_key_considerations/index.html#acceptance-rejection-rule-for-activities",
-    "title": "Manual of authority (MoA) | What to include? and more importantly what not to include?",
-    "section": "Acceptance & rejection rule (for activities)",
-    "text": "Acceptance & rejection rule (for activities)\nThe second key rule which determines if you should include the activity in MoA is - the activity should represent an activity which can be accepted or rejected. This implies that an element of review, judgement and prudence must be exercised by the person reviewing and approving the activity. Procedural activities which are routine in nature and does not require explicit approval should not included in MoA."
-  },
-  {
-    "objectID": "posts/balanced_scorecard/index.html",
-    "href": "posts/balanced_scorecard/index.html",
-    "title": "Understanding balanced scorecard",
-    "section": "",
-    "text": "Introduction\n\nTraditional performance measurement metrics over emphasize financial KPIs to the detriment of other key considerations, which are important from strategic and sustainability perspective.\nIn addition to the financial aspects, balanced scorecard considers three key important considerations i.e. internal business processes, learning and growth and customer.\n\n\n\nKey tenants of balanced scorecard\n\nKey perspectives of balanced scorecard and how KPIs are defined in each are stated below.\nFinancial: To succeed financially, how should we appear to our investment stakeholders (equity or debt)\n\nObjectives\nMeasures\nTargets\nInitiatives\n\nInternal business process: To satisfy business objectives what internal business processes must the entity excel at\n\nObjectives\nMeasures\nTargets\nInitiatives\n\nLearning and growth: Aligned with entity’s vision and plans, what learning and growth interventions should be pursued, which will ensure sustainability and gradual improvement.\n\nObjectives\nMeasures\nTargets\nInitiatives\n\nCustomers: How should a company be perceived by it’s customers\n\nObjectives\nMeasures\nTargets\nInitiatives\n\n\n\n\nTypical workflow in setting balanced scorecard\nAn over simplified workflow to understand the process of setting balanced scorecard is stated below\n\n\n\nFlowchart"
-  },
-  {
-    "objectID": "posts/eda_titanic/index.html",
-    "href": "posts/eda_titanic/index.html",
-    "title": "EDA for Titanic",
-    "section": "",
-    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nprint('New updates are being pushed and reflected')\n\n[1] \"New updates are being pushed and reflected\"\n\nhead(iris)\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1          5.1         3.5          1.4         0.2  setosa\n2          4.9         3.0          1.4         0.2  setosa\n3          4.7         3.2          1.3         0.2  setosa\n4          4.6         3.1          1.5         0.2  setosa\n5          5.0         3.6          1.4         0.2  setosa\n6          5.4         3.9          1.7         0.4  setosa"
-  },
-  {
-    "objectID": "posts/file_n_folder_mgmt/index.html",
-    "href": "posts/file_n_folder_mgmt/index.html",
-    "title": "FIle management for R projects",
-    "section": "",
-    "text": "Reading and writing files can sometimes be challenging. This is an attempt to share the process I am following for making it easy to reading and writing of files in R.\n\n\n\nlibrary(pacman)\npacman::p_load(fs, folderfun, tidyverse)\n\n\n\n\nI have found the package folder function package and fs package to be very useful for file managing files.\n\nfs::path() will be used to construct the path of the location folder\nfolderfun::setff() will be used to define a new function, wherein the first argument is the name of the new function prceded by ff.\n\n\n# Defining the input function\nfolderfun::setff(name = 'In',\n                 fs::path(\"C:/Users/aqureshi037/PycharmProjects/Ahsan_Blog_Quarto\",\n                          \"posts\", \"file_n_folder_Mgmt\", \"input_data\")\n                 )\n\nCreated folder function ffIn(): C:/Users/aqureshi037/PycharmProjects/Ahsan_Blog_Quarto/posts/file_n_folder_Mgmt/input_data\n\n# Defining the ourput function\nfolderfun::setff(name = 'Out',\n                 fs::path(\"C:/Users/aqureshi037/PycharmProjects/Ahsan_Blog_Quarto\",\n                          \"posts\", \"file_n_folder_Mgmt\", \"output_data\")\n                 )\n\nCreated folder function ffOut(): C:/Users/aqureshi037/PycharmProjects/Ahsan_Blog_Quarto/posts/file_n_folder_Mgmt/output_data\n\n\n\n\n\niris.csv file is already located in the ‘input’ folder.\n\ndata(iris)\n\n#Writing the data to the folder\nreadr::write_csv(iris, ffOut(\"iris.csv\"))\n\n\n#Reading the data from the folder\niris_data &lt;- readr::read_csv(ffIn(\"iris.csv\"))\n\nRows: 150 Columns: 5\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (1): Species\ndbl (4): Sepal.Length, Sepal.Width, Petal.Length, Petal.Width\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message."
-  },
-  {
-    "objectID": "posts/file_n_folder_mgmt/index.html#reading-required-pacakges.",
-    "href": "posts/file_n_folder_mgmt/index.html#reading-required-pacakges.",
-    "title": "FIle management for R projects",
-    "section": "",
-    "text": "pacman::p_load(fs, folderfun, tidyverse)"
-  },
-  {
-    "objectID": "posts/file_n_folder_mgmt/index.html#define-the-path-wherein-the-input-and-output-will-be-located-in-the-local-drive.",
-    "href": "posts/file_n_folder_mgmt/index.html#define-the-path-wherein-the-input-and-output-will-be-located-in-the-local-drive.",
-    "title": "FIle management for R projects",
-    "section": "",
-    "text": "I have found the package folder function package and fs package to be very useful for file managing files.\n\nfs::path() will be used to construct the path of the location folder\nfolderfun::setff() will be used to define a new function, wherein the first argument is the name of the new function prceded by ff.\n\n\n# Defining the input function\nfolderfun::setff(name = 'In',\n                 fs::path(\"C:/Users/aqureshi037/PycharmProjects/Ahsan_Blog_Quarto\",\n                          \"posts\", \"file_n_folder_Mgmt\", \"input_data\")\n                 )\n\nCreated folder function ffIn(): C:/Users/aqureshi037/PycharmProjects/Ahsan_Blog_Quarto/posts/file_n_folder_Mgmt/input_data\n\n# Defining the ourput function\nfolderfun::setff(name = 'Out',\n                 fs::path(\"C:/Users/aqureshi037/PycharmProjects/Ahsan_Blog_Quarto\",\n                          \"posts\", \"file_n_folder_Mgmt\", \"output_data\")\n                 )\n\nCreated folder function ffOut(): C:/Users/aqureshi037/PycharmProjects/Ahsan_Blog_Quarto/posts/file_n_folder_Mgmt/output_data"
-  },
-  {
-    "objectID": "posts/file_n_folder_mgmt/index.html#reading-of-the-file",
-    "href": "posts/file_n_folder_mgmt/index.html#reading-of-the-file",
-    "title": "FIle management for R projects",
-    "section": "",
-    "text": "iris.csv file is already located in the ‘input’ folder.\n\ndata(iris)\n\n#Writing the data to the folder\nreadr::write_csv(iris, ffOut(\"iris.csv\"))\n\n\n#Reading the data from the folder\niris_data &lt;- readr::read_csv(ffIn(\"iris.csv\"))\n\nRows: 150 Columns: 5\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (1): Species\ndbl (4): Sepal.Length, Sepal.Width, Petal.Length, Petal.Width\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message."
-  },
-  {
-    "objectID": "posts/file_n_folder_mgmt/index.html#reading-required-packages.",
-    "href": "posts/file_n_folder_mgmt/index.html#reading-required-packages.",
-    "title": "FIle management for R projects",
-    "section": "",
-    "text": "library(pacman)\npacman::p_load(fs, folderfun, tidyverse)"
-  },
-  {
-    "objectID": "posts/remnotes/remnotes.html",
-    "href": "posts/remnotes/remnotes.html",
-    "title": "RemNotes & Why I use it",
-    "section": "",
-    "text": "Remnote is a powerful notes taking program which is available both as on online version and as a web application.\nKey features of the applications are - Ability to link notes - Configuring notes for space repetition - Good PDF notes taking editor which allows to take notes while reading a document. - Defining your own templates to structure your notes - Pleasant UI for all you notes.\nComplete details of all the features are available on the RemNotes Website\nThere are other options, however, in my view Remnote is the best. I believe I was one of the early adopters and I have seen the evolution over the years. Continuously new features are being added and this has greatly improved the overall value proposition offered by Remnote.\nLastly you can try the application using this link. This will give me some credit, however, seeking credit is not the reason to post this link. I genuinely love Remnote and I believe it one the best tool."
-  },
-  {
-    "objectID": "posts/ammonia_&_urea_manufacturing/index.html",
-    "href": "posts/ammonia_&_urea_manufacturing/index.html",
-    "title": "Ammonia & Urea Manufacturing",
-    "section": "",
-    "text": "Introduction\nChecking"
-  },
-  {
-    "objectID": "posts/remnotes/index.html",
-    "href": "posts/remnotes/index.html",
-    "title": "RemNotes & Why I use it",
-    "section": "",
-    "text": "Remnote is a powerful notes taking program which is available both as on online version and as a web application.\nKey features of the applications are - Ability to link notes - Configuring notes for space repetition - Good PDF notes taking editor which allows to take notes while reading a document. - Defining your own templates to structure your notes - Pleasant UI for all you notes.\nComplete details of all the features are available on the RemNotes Website\nThere are other options, however, in my view Remnote is the best. I believe I was one of the early adopters and I have seen the evolution over the years. Continuously new features are being added and this has greatly improved the overall value proposition offered by Remnote.\nLastly you can try the application using this link. This will give me some credit, however, seeking credit is not the reason to post this link. I genuinely love Remnote and I believe it one the best tool."
   }
 ]
