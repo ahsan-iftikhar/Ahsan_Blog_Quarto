@@ -1,0 +1,29 @@
+---
+title: "Financial Modelling"
+date: "2026-02-28"
+---
+
+- What is a financial modelling→Multi disciplinary, powerful communication tool for forecasting financial statement, based on different parameters and assumptions.
+- Attributes of a good financial model
+    - Dynamic - Changes are easily model, which runs across the model
+    - Flexible - Easily expandable
+    - Intuitive - Others can understand logic
+    - Transparent - Easy to follow. No giant formula
+    - Printable - It can be printed
+    - Transferable - Others can use the model and make updates to it
+    - Storytelling - Tell a story in a seamless flow
+- Competencies required to build professional financial model
+    - Design
+    - Accounting understanding
+    - Business operations
+    - Finance
+- Use cases of financial models for decision making
+    - Valuation
+    - Credit model
+    - Operational issues
+    - Risk & volatility
+    - Mergers & acquisitions
+- So many models are a mess
+- Aspects where a financial model should work well
+    - Electronically - Every formula work well and needs to make sense
+    - On paper - Models need to work well on paper or pdf
