@@ -1,0 +1,11 @@
+---
+title: "Risk Assessment - How identify the risk"
+date: "2027-01-01"
+author: "Ahsan Iftikhar"
+---
+
+1. Process classification scheme (PCS) to ensure coverage
+
+2. Using Boetie method
+
+

@@ -3,5 +3,10 @@ title: "List of Read Books"
 date: "12-12-2026"
 ---
 
-This pages gives a of the books, that I have read
+This pages gives a of the books, that I have either read or in the process of reading
+
+1. Ego is the enemy
+2. Seven habits of highly effective people
+3. Atomic habits
+4. Thinkig fast and slow
 
