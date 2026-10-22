@@ -9,9 +9,58 @@
   {
     "objectID": "posts/risk_assessment/index.html",
     "href": "posts/risk_assessment/index.html",
-    "title": "Risk Assessment - How identify the risk",
+    "title": "Risk Assessment - How to identify the risk",
     "section": "",
-    "text": "Process classification scheme (PCS) to ensure coverage\nUsing Boetie method"
+    "text": "This document summarizes my experience, challenges and eventually research to find the best possible methodology for risk assessment. I would like to highlight that I have taken extensive support from different LLM models, in pursuit of writing this article"
+  },
+  {
+    "objectID": "posts/risk_assessment/index.html#a.-elicitation-and-group-cognition",
+    "href": "posts/risk_assessment/index.html#a.-elicitation-and-group-cognition",
+    "title": "Risk Assessment - How to identify the risk",
+    "section": "A. Elicitation and group cognition",
+    "text": "A. Elicitation and group cognition\n\n\n\n\n\n\n\n\n\n\nMethodology\nDescription\nReference\nWhen NOT to use\nMost suitable for\n\n\n\n\nStructured brainstorming\nFacilitated generation of candidate risks by a group against a prompt set\nIEC 31010:2019 ◐ · ISO 31000 “inclusive”\nAs the only method; for a single high-consequence event\nDefault first pass of any cycle\n\n\nSemi-structured interviews\nOne-to-one questioning with open prompts to surface tacit knowledge\nIEC 31010:2019 ◐\nWhen breadth is needed quickly; as the sole method\nCapturing work-as-done before the workshop\n\n\nDelphi method\nIterative anonymous expert rounds converging on a judgement and its dispersion\nIEC 31010:2019 ◐\nWhen speed matters; when consensus will be manufactured\nLow-frequency risks where experts disagree\n\n\nNominal group technique\nSilent individual generation, then structured ranking for equal airtime\n[P]\nWhen novel, imaginative risk is the goal\nFair ranking in hierarchy-heavy cultures\n\n\nBrainwriting (6-3-5)\nWritten ideas passed around in timed rounds, then collected\n[P]\nWhen the prompt set is absent\nLarge groups with dominant personalities\n\n\nPre-mortem\nTeam assumes the plan failed and works backwards to the causes\n[P] (Klein)\nFor routine operational risk; without a real facilitator\nStress-testing a plan before approval\n\n\nRed teaming\nAn independent group structured to challenge a plan or assumption set\n[P] · NIST SP 800-115 ◐\nAs tokenism; without independence\nChallenging bids, security and strategy\n\n\nWar-gaming / simulation\nImmersive exercise testing decisions against a running scenario\n[P]\nWhen findings must be generalisable\nCrisis response and escalation paths\n\n\nObservation / shadowing\nDirect watching of work-as-done to find drift from procedure\n[P] · ISO 45001 ◐\nWhen breadth is needed quickly\nVerifying work-as-done in the field\n\n\nCrowdsourcing / near-miss reporting\nFrontline submission channels aggregating many small signals\nISO 45001 ◐ · [P]\nWithout triage capacity; in a blame culture\nDispersed field operations at volume"
+  },
+  {
+    "objectID": "posts/risk_assessment/index.html#b.-prompt-and-context",
+    "href": "posts/risk_assessment/index.html#b.-prompt-and-context",
+    "title": "Risk Assessment - How to identify the risk",
+    "section": "B. Prompt and context",
+    "text": "B. Prompt and context\n\n\n\n\n\n\n\n\n\n\nMethodology\nDescription\nReference\nWhen NOT to use\nMost suitable for\n\n\n\n\nRisk taxonomy / prompt list\nStructured categories that prompt recall across the risk universe\nCOSO 2017 Principle 6 ◐ · ISO 31000 6.4.2 ◐ · [P]\nAlone — yields categories, not events; when stale or unowned\nThe backbone, paired with any method\n\n\nChecklists / questionnaires\nFixed lists applied systematically to a defined scope\nIEC 31010:2019 ◐\nFor novel or emerging risk\nAuditing completeness of a known scope\n\n\nPESTLE\nScan of external drivers across six lenses\n[P] · ISO 31000 6.3.3 ◐\nFor specific events or internal detail\nStrategy-level external scanning\n\n\nSWOT\nMatrix of internal strengths/weaknesses, external opportunities/threats\n[P]\nAs an identification method at all\nOpening a strategy conversation\n\n\nFutures wheel / horizon scanning\nMapping second/third-order consequences; tracking weak signals\n[P] · ISO 31000 “best available information”\nFor near-term, verifiable risk\nEmerging and third-order consequences\n\n\nMorphological / cross-impact\nSystematic combination of variables to generate futures\nIEC 31010:2019 ◐\nWithout a triage gate\nSystematic futures for tech/regulation"
+  },
+  {
+    "objectID": "posts/risk_assessment/index.html#c.-structured-deviation-and-hazard",
+    "href": "posts/risk_assessment/index.html#c.-structured-deviation-and-hazard",
+    "title": "Risk Assessment - How to identify the risk",
+    "section": "C. Structured deviation and hazard",
+    "text": "C. Structured deviation and hazard\n\n\n\n\n\n\n\n\n\n\nMethodology\nDescription\nReference\nWhen NOT to use\nMost suitable for\n\n\n\n\nHAZID (Hazard Identification)\nStructured hazard identification within a defined scope using guidewords\n[P] · ISO 17776 ◐\nFor ongoing operations; for commercial risk\nEarly design of a physical site or process\n\n\nSWIFT (Structured What-If)\nTeam applies what-if guidewords to a process or change\nIEC 31010:2019 ◐\nFor complex interacting systems\nProjects and change, fast and cheap\n\n\nHAZOP (Hazard and Operability)\nNode-by-node deviation analysis via parameter + guideword pairs\nIEC 61882:2016 ◐\nFor simple systems (overkill); for people factors alone\nComplex interconnected process systems\n\n\nJSA / task risk assessment\nTask broken into steps; hazard and control per step\nISO 45001 ◐ · [P]\nFor enterprise or systemic risk\nEvery maintenance task, every permit\n\n\nHierarchical task analysis\nTask decomposed into subtasks to locate error points\nIEC 62508:2010 ◐ · [P]\nWithout field validation\nError points in maintenance procedures"
+  },
+  {
+    "objectID": "posts/risk_assessment/index.html#d.-failure-mode-and-causal",
+    "href": "posts/risk_assessment/index.html#d.-failure-mode-and-causal",
+    "title": "Risk Assessment - How to identify the risk",
+    "section": "D. Failure-mode and causal",
+    "text": "D. Failure-mode and causal\n\n\n\n\n\n\n\n\n\n\nMethodology\nDescription\nReference\nWhen NOT to use\nMost suitable for\n\n\n\n\nFMEA (Failure Mode and Effects Analysis)\nBottom-up listing of component failure modes, effects and detection\nIEC 60812:2018\nFor high-level enterprise risk; for cross-system interaction\nMaintenance planning for critical assets\n\n\nFMECA (FMEA + Criticality)\nFMEA plus a criticality ranking of each failure mode\nIEC 60812:2018\nBefore the FMEA data exists\nSpares and capital prioritisation\n\n\nFault tree analysis\nTop-down logic diagram of how a top event could occur\nIEC 61025:2006\nFor broad identification (needs a defined top event)\nVerifying defences for a known worst case\n\n\nEvent tree analysis\nForward logic from an initiator through successive safeguards\nIEC 62502:2010 ◐\nFor unimagined initiators\nConsequences of a defined initiator\n\n\nLOPA (Layers of Protection Analysis)\nSemi-quantitative check that protection layers reduce risk to target\nIEC 61511 ◐ · CCPS [P]\nFor vague scenarios without defined layers\nJustifying treatment for high-hazard scenarios\n\n\nBow-tie\nCauses left, event centre, consequences right, controls each side\nIEC 31010:2019 ◐ · Energy Institute [P]\nFor aggregate/portfolio view\nCommunicating one serious event and its controls\n\n\nBarrier analysis\nMap of defences and where they are degraded or absent\n[P] (Reason) · Energy Institute\nFor emergent, dynamic interaction\nVerifying the control stack on a bow-tie\n\n\nRoot cause analysis\nStructured trace from an event back to its causal factors\nIEC 62740:2015 ◐ · ISO 45001\nFor future/emerging risk; for single-cause certainty\nPost-incident and near-miss learning\n\n\nHRA (Human Reliability Analysis)\nAnalysis of error-prone tasks and human error likelihood\nIEC 62508:2010 ◐ · HEART/SPAR-H [P]\nFor non-safety-critical work; for false precision\nError-prone safety-critical tasks\n\n\nRCM (Reliability Centred Maintenance)\nDetermines failure modes and the maintenance each justifies\nIEC 60300-3-11:2009 ◐ · SAE JA1011\nFor low-criticality assets; without an asset hierarchy\nAsset-intensive renewal planning\n\n\nCommon cause failure analysis\nFinds shared dependencies that defeat redundancy\nIEC 61508/61511 ◐ · [P]\nWithout accurate dependency mapping\nPower, control and monitoring redundancy"
+  },
+  {
+    "objectID": "posts/risk_assessment/index.html#e.-model-and-systems",
+    "href": "posts/risk_assessment/index.html#e.-model-and-systems",
+    "title": "Risk Assessment - How to identify the risk",
+    "section": "E. Model and systems",
+    "text": "E. Model and systems\n\n\n\n\n\n\n\n\n\n\nMethodology\nDescription\nReference\nWhen NOT to use\nMost suitable for\n\n\n\n\nScenario analysis / stress testing\nNarratives or quantified shocks of plausible futures\nIEC 31010:2019 ◐ · TCFD/ISSB ◐\nFor precise likelihood; for operational detail\nExploring what has not happened yet\n\n\nReverse stress testing\nStarts from failure and identifies conditions that would cause it\n[R] PRA/EIOPA · [P]\nFor routine risk; without board support\nFinding what must be true for failure\n\n\nCausal loop / system dynamics\nMaps feedback loops and simulates behaviour over time\n[P] (Forrester)\nFor discrete event identification\nFeedback and unintended consequences\n\n\nFRAM (Functional Resonance Analysis)\nModels how function variability propagates through a system\n[P] (Hollnagel)\nFor conventional systems; without training\nComplex socio-technical variability\n\n\nSTPA (System-Theoretic Process Analysis)\nIdentifies unsafe control actions in a control-structure model\n[P] (Leveson) · ISO 21448 ◐\nFor simple systems; without a trained analyst\nSoftware-intensive, automated systems"
+  },
+  {
+    "objectID": "posts/risk_assessment/index.html#f.-data-driven",
+    "href": "posts/risk_assessment/index.html#f.-data-driven",
+    "title": "Risk Assessment - How to identify the risk",
+    "section": "F. Data-driven",
+    "text": "F. Data-driven\n\n\n\n\n\n\n\n\n\n\nMethodology\nDescription\nReference\nWhen NOT to use\nMost suitable for\n\n\n\n\nIncident / near-miss analysis\nMining past events and near-misses for recurring causes\nISO 31000 6.6 ◐ · ISO 45001 · COSO Principle 9\nFor risks that have never occurred\nThe corrective to group memory — every cycle\n\n\nAudit, inspection and condition data\nUsing assurance findings and asset condition as evidence\nISO 31000 6.6 ◐ · ISO 55001 · Three Lines Model\nFor the unknown — the scope is your boundary\nEvidence of what is already failing\n\n\nTelemetry / anomaly detection\nAutomated detection of precursors in sensor data\n[P] · ISO 55001 ◐\nWithout data quality; for un-instrumented assets\nEarly warning across an asset fleet\n\n\nText mining of logs\nStatistical extraction of patterns from unstructured records\n[P]\nFor small volumes; for causal certainty\nPatterns in field tickets and complaints"
+  },
+  {
+    "objectID": "posts/risk_assessment/index.html#g.-domain-regimes-the-better-source-not-iso-31000",
+    "href": "posts/risk_assessment/index.html#g.-domain-regimes-the-better-source-not-iso-31000",
+    "title": "Risk Assessment - How to identify the risk",
+    "section": "G. Domain regimes — the better source, not ISO 31000",
+    "text": "G. Domain regimes — the better source, not ISO 31000\n\n\n\n\n\n\n\n\n\n\nMethodology\nDescription\nReference\nWhen NOT to use\nMost suitable for\n\n\n\n\nThreat modelling / TVRA\nMaps threat sources, vulnerabilities and attack paths\nISO/IEC 27005 ◐ · NIST SP 800-30 · NIST SP 800-154 · CPNI [R]\nFor non-security risk; restricted circulation\nPhysical and cyber security of sites\n\n\nBIA (Business Impact Analysis)\nQuantifies time-based impact of disruption per activity\nISO 22301:2019\nFor threat identification (impact only)\nRecovery-time prioritisation\n\n\nCompliance obligation register\nLists obligations mapped to controls and owners\nISO 37301:2021\nFor voluntary/reputational exposure\nConsent- and licence-driven identification\n\n\nThird-party / concentration\nMaps dependency and substitutability across supply tiers\nISO 37500:2014 ◐ · [P]\nBeyond tier-1 visibility\nSupply-side single points of failure\n\n\nDPIA (Data Protection Impact Assessment)\nAssesses privacy harms of a processing activity\nGDPR art. 35 · ISO 27701 ◐\nFor non-privacy risk\nNew monitoring and data-sharing\n\n\nEnvironmental & social impact\nEvaluates external impacts of a project or change\n[R] national law · IFC Performance Standards · ISO 14001\nFor cumulative or enterprise-wide risk\nGreenfield and community-facing builds\n\n\nClimate scenario analysis\nAssesses physical and transition risk under climate futures\nTCFD · ISSB IFRS S2\nFor short-horizon operational risk\nPhysical/transition risk, asset resilience\n\n\nFraud risk assessment\nIdentifies fraud schemes mapped to processes and roles\nCOSO Fraud Risk Management Guide 2016 · IIA\nWithout fraud expertise\nProcurement, payments, fuel, payroll\n\n\n\nNo new verification items are introduced by this change — the standing list applies unchanged (IEC 31010:2019 annex letters, IEC 61882, IEC 60812, IEC 61025, IEC 62502, IEC 62740, IEC 60300-3-11, ISO 22301, ISO 37301, ISO 37500, ISO 45001, ISO 55001, ISO/IEC 27005, and ISO 31000:2018 at 6.3.3, 6.4.2 and 6.6). If useful, the next step is to turn this into a single deliverable document with a short selection flowchart on top."
   },
   {
     "objectID": "posts/pie_chart_using_ggplot/index.html",
@@ -26,6 +75,76 @@
     "title": "Making pie chart using ggplot",
     "section": "Donut chart",
     "text": "Donut chart\n\nggplot(data = df, mapping = aes(x = \"\", y = share, fill = brand)) +\n  geom_bar(stat = \"identity\", width = 1) +\n  coord_polar(theta = \"y\", start = 0) +\n  geom_text(aes(\n    label = str_c(round(share*100), \"%\")),\n    position = position_stack(vjust = 0.5)\n    ) +\n  theme_void() +\n  scale_fill_brewer(palette = \"Dark2\") +\n  labs(title = \"Manufacturer - Market Share\") +\n  theme(\n    plot.title = element_text(hjust = 0.5, color = \"red\")\n  )\n\n\n\n\n\n\n\n\n\nggplot(data = df, mapping = aes(x = 2, y = share, fill = brand)) +\n  geom_bar(stat = \"identity\", width = 1) +\n  coord_polar(theta = \"y\", start = 0) +\n  geom_text(aes(\n    label = str_c(round(share*100), \"%\")),\n    position = position_stack(vjust = 0.5)\n    ) +\n  theme_void() +\n  scale_fill_brewer(palette = \"Dark2\") +\n  labs(title = \"Manufacturer - Market Share\") +\n  theme(\n    plot.title = element_text(hjust = 0.5, color = \"red\")\n  ) +\n  xlim(0.5, 2.5)"
+  },
+  {
+    "objectID": "posts/financial_modelling/index.html",
+    "href": "posts/financial_modelling/index.html",
+    "title": "Financial Modelling",
+    "section": "",
+    "text": "What is a financial modelling→Multi disciplinary, powerful communication tool for forecasting financial statement, based on different parameters and assumptions.\nAttributes of a good financial model\n\nDynamic - Changes are easily model, which runs across the model\nFlexible - Easily expandable\nIntuitive - Others can understand logic\nTransparent - Easy to follow. No giant formula\nPrintable - It can be printed\nTransferable - Others can use the model and make updates to it\nStorytelling - Tell a story in a seamless flow\n\nCompetencies required to build professional financial model\n\nDesign\nAccounting understanding\nBusiness operations\nFinance\n\nUse cases of financial models for decision making\n\nValuation\nCredit model\nOperational issues\nRisk & volatility\nMergers & acquisitions\n\nSo many models are a mess\nAspects where a financial model should work well\n\nElectronically - Every formula work well and needs to make sense\nOn paper - Models need to work well on paper or pdf"
+  },
+  {
+    "objectID": "posts/file_n_folder_mgmt/index.html",
+    "href": "posts/file_n_folder_mgmt/index.html",
+    "title": "File Management for Data Projects",
+    "section": "",
+    "text": "Reading files easily\nReading and writing files can sometimes be challenging. This is an attempt to share the process I am following for making it easy to reading and writing of files in R."
+  },
+  {
+    "objectID": "posts/books/index.html",
+    "href": "posts/books/index.html",
+    "title": "List of Read Books",
+    "section": "",
+    "text": "This pages gives a of the books, that I have either read or in the process of reading\n\nEgo is the enemy\nSeven habits of highly effective people\nAtomic habits\nThinkig fast and slow"
+  },
+  {
+    "objectID": "posts/bar_chart_using_ggplot/index.html",
+    "href": "posts/bar_chart_using_ggplot/index.html",
+    "title": "Making bar chart using ggplot",
+    "section": "",
+    "text": "A chart featuring the interaction of a categorical variable and it’s numercial value. More simply, the numercial values are represented by bars, whose length vary based on the value\n\nBar chart is more preferrable than pie charts and mostly better choice to compare values."
+  },
+  {
+    "objectID": "posts/bar_chart_using_ggplot/index.html#bar-chart",
+    "href": "posts/bar_chart_using_ggplot/index.html#bar-chart",
+    "title": "Making bar chart using ggplot",
+    "section": "Bar chart",
+    "text": "Bar chart\n\nggplot2::ggplot(data = df, mapping = aes(x = brand, y = share)) +\n  geom_bar(stat = \"identity\")\n\n\n\n\n\n\n\n\n\n# Move this to Abraj R File -----------------------------------------------\nsummary_obs &lt;- tibble(\n  rating = c(\"High\", \"Medium\", \"Low\"),\n  obs = c(0, 2, 7),\n  color = c(\"red\", \"yellow\", \"green\"),\n  ann = c(\"No high rated exception\", \" \", \" \")\n  )\n\n# summary_obs &lt;- summary_obs %&gt;%\n#   mutate(\n#     rating = factor(summary_obs$rating, levels = c(\"High\", \"Medium\", \"Low\"))\n#   )\n\nsummary_obs &lt;- summary_obs %&gt;%\n  mutate(\n    rating = as_factor(rating)\n  )\n\nggplot2::ggplot(data = summary_obs, aes(x = rating, y = obs)) +\n  geom_bar(stat = \"identity\", aes(fill = rating)) +\n  geom_text(aes(label = obs)) +\n  theme_minimal() +\n  scale_fill_manual(values = c(\"red\", \"yellow\", \"green\")) +\n  labs(title = \"Finance & Accounts Review\",\n       subtitle = \"Summary of observations by rating\",\n       x = \"Risk Rating\",\n       y = \"No. of Observations\"\n       ) +\n  theme(\n    legend.position = \"none\"\n  )"
+  },
+  {
+    "objectID": "posts/ammonia_&_urea_manufacturing/index.html",
+    "href": "posts/ammonia_&_urea_manufacturing/index.html",
+    "title": "Ammonia & Urea Manufacturing",
+    "section": "",
+    "text": "Introduction\nChecking. I have updated some text here, just to check if the project is getting updated.\nThis is the 2nd line of updates that I have done"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Blog Expectations A brief statement about objectives and what to expect from this blog\nWriting and teaching is an exploratory and insightful journey for better understanding and assimilation of knowledge. This blog aims to share my learning journey. Following expectations defines the content in this blog.\n\nMost of the content will focus on areas like data science, tools & technologies and generating valuable insights.\nIn addition, it will feature topics on business, strategy, finance and audit.\nIn almost all the cases, I will not be the originator of knowledge and content, rather it’s an attempt to share my understanding and insights. All original authors and content writers will be adequately referenced.\n\nImportant: None of the posts shared on this blog represent a professional advise. Its rather my perspectives and opinions, which often change frequently. Treat the posts on this blog, as occasional conversations from a friend who is trying to provide or get a better understanding."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Professional & Personal Blog",
+    "section": "",
+    "text": "Risk Assessment - How to identify the risk\n\n\n\n\n\n\n\n\nJan 1, 2027\n\n\nAhsan Iftikhar\n\n\n\n\n\n\n\n\n\n\n\n\nList of Read Books\n\n\n\n\n\n\n\n\nDec 12, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nFile Management for Data Projects\n\n\n\n\n\n\n\n\nNov 10, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nFinancial Modelling\n\n\n\n\n\n\n\n\nFeb 28, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nAmmonia & Urea Manufacturing\n\n\n\n\n\n\n\n\nJul 20, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nRemNotes & Why I use it\n\n\n\n\n\n\n\n\nAug 5, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nEDA for Titanic\n\n\n\n\n\n\n\n\nJul 2, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nBoard of Directors Evaluation\n\n\n\n\n\n\n\n\nDec 24, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nUnderstanding balanced scorecard\n\n\n\n\n\n\n\n\nSep 13, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nMaking bar chart using ggplot\n\n\n\n\n\n\n\n\nSep 13, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nFinancial Formulas\n\n\n\n\n\n\n\n\nSep 13, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nManual of authority (MoA) | What to include? and more importantly what not to include?\n\n\n\n\n\n\n\n\nAug 24, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nUnderstanding Version Control, Git & Github\n\n\n\n\n\n\n\n\nJul 24, 2022\n\n\nAhsan Iftikhar\n\n\n\n\n\n\n\n\n\n\n\n\nMaking pie chart using ggplot\n\n\n\n\n\n\n\n\nJun 22, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nUsing SSH to connect to Github\n\n\n\n\n\n\n\n\nMay 22, 2022\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/balanced_scorecard/index.html",
+    "href": "posts/balanced_scorecard/index.html",
+    "title": "Understanding balanced scorecard",
+    "section": "",
+    "text": "Introduction\n\nTraditional performance measurement metrics over emphasize financial KPIs to the detriment of other key considerations, which are important from strategic and sustainability perspective.\nIn addition to the financial aspects, balanced scorecard considers three key important considerations i.e. internal business processes, learning and growth and customer.\n\n\n\nKey tenants of balanced scorecard\n\nKey perspectives of balanced scorecard and how KPIs are defined in each are stated below.\nFinancial: To succeed financially, how should we appear to our investment stakeholders (equity or debt)\n\nObjectives\nMeasures\nTargets\nInitiatives\n\nInternal business process: To satisfy business objectives what internal business processes must the entity excel at\n\nObjectives\nMeasures\nTargets\nInitiatives\n\nLearning and growth: Aligned with entity’s vision and plans, what learning and growth interventions should be pursued, which will ensure sustainability and gradual improvement.\n\nObjectives\nMeasures\nTargets\nInitiatives\n\nCustomers: How should a company be perceived by it’s customers\n\nObjectives\nMeasures\nTargets\nInitiatives\n\n\n\n\nTypical workflow in setting balanced scorecard\nAn over simplified workflow to understand the process of setting balanced scorecard is stated below\n\n\n\nFlowchart"
+  },
+  {
+    "objectID": "posts/eda_titanic/index.html",
+    "href": "posts/eda_titanic/index.html",
+    "title": "EDA for Titanic",
+    "section": "",
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nprint('New updates are being pushed and reflected')\n\n[1] \"New updates are being pushed and reflected\"\n\nhead(iris)\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1          5.1         3.5          1.4         0.2  setosa\n2          4.9         3.0          1.4         0.2  setosa\n3          4.7         3.2          1.3         0.2  setosa\n4          4.6         3.1          1.5         0.2  setosa\n5          5.0         3.6          1.4         0.2  setosa\n6          5.4         3.9          1.7         0.4  setosa"
   },
   {
     "objectID": "posts/financial_formulas/index.html",
@@ -61,69 +180,6 @@
     "title": "Financial Formulas",
     "section": "4. Derivative Related Formulas",
     "text": "4. Derivative Related Formulas\n\n1. Forward Rate\n\\[F = S.ln^{(r_2-r_1).t}\\] Where\n\nF = Forward rate\nS = Spot rate (this is generally the closing rate for the date)\n\\(ln\\) = Base of the natural logarithms (2.718)\n\\(r_2\\) = interest free rate of the target currency in which the final settlement will be done.\n\\(r_1\\) = interest free rate of the host currency in which the transaction is done\nt = Time to final settlement (in years)\n\n\n\n2. Fair Value of Derivative\n\\[FV = A.(F-K).(e)^{-r_2.T}\\] Where\n\nFV = Fair value\nA = Amount in the host currency\nK = Strike price (the rate on which the final settlement will be done)\n\n\n\n3. Discounting based Fair Value / Present Value of Derivative\n\\[PV = A.exp(-r_2.T)\\] Where\n\nexp = exponent\n\n\n\n4. Floating Leg of Interest Rate Swaps\n\\[PV_{floating} = F - \\frac{F}{(1+\\frac{r}{n})^{nt}}\\]\nWhere\n\nF = Face value or notional amount\nr = interest rate (decimal)\nn = number of times interest is compounded per year.\nt = time (in years)"
-  },
-  {
-    "objectID": "posts/eda_titanic/index.html",
-    "href": "posts/eda_titanic/index.html",
-    "title": "EDA for Titanic",
-    "section": "",
-    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nprint('New updates are being pushed and reflected')\n\n[1] \"New updates are being pushed and reflected\"\n\nhead(iris)\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1          5.1         3.5          1.4         0.2  setosa\n2          4.9         3.0          1.4         0.2  setosa\n3          4.7         3.2          1.3         0.2  setosa\n4          4.6         3.1          1.5         0.2  setosa\n5          5.0         3.6          1.4         0.2  setosa\n6          5.4         3.9          1.7         0.4  setosa"
-  },
-  {
-    "objectID": "posts/balanced_scorecard/index.html",
-    "href": "posts/balanced_scorecard/index.html",
-    "title": "Understanding balanced scorecard",
-    "section": "",
-    "text": "Introduction\n\nTraditional performance measurement metrics over emphasize financial KPIs to the detriment of other key considerations, which are important from strategic and sustainability perspective.\nIn addition to the financial aspects, balanced scorecard considers three key important considerations i.e. internal business processes, learning and growth and customer.\n\n\n\nKey tenants of balanced scorecard\n\nKey perspectives of balanced scorecard and how KPIs are defined in each are stated below.\nFinancial: To succeed financially, how should we appear to our investment stakeholders (equity or debt)\n\nObjectives\nMeasures\nTargets\nInitiatives\n\nInternal business process: To satisfy business objectives what internal business processes must the entity excel at\n\nObjectives\nMeasures\nTargets\nInitiatives\n\nLearning and growth: Aligned with entity’s vision and plans, what learning and growth interventions should be pursued, which will ensure sustainability and gradual improvement.\n\nObjectives\nMeasures\nTargets\nInitiatives\n\nCustomers: How should a company be perceived by it’s customers\n\nObjectives\nMeasures\nTargets\nInitiatives\n\n\n\n\nTypical workflow in setting balanced scorecard\nAn over simplified workflow to understand the process of setting balanced scorecard is stated below\n\n\n\nFlowchart"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Professional & Personal Blog",
-    "section": "",
-    "text": "Risk Assessment - How identify the risk\n\n\n\n\n\n\n\n\n\n\n\nJan 1, 2027\n\n\nAhsan Iftikhar\n\n\n\n\n\n\n\n\n\n\n\n\nList of Read Books\n\n\n\n\n\n\n\n\n\n\n\nDec 12, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nFile Management for Data Projects\n\n\n\n\n\n\n\n\n\n\n\nNov 10, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nAmmonia & Urea Manufacturing\n\n\n\n\n\n\n\n\n\n\n\nJul 20, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nRemNotes & Why I use it\n\n\n\n\n\n\n\n\n\n\n\nAug 5, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nEDA for Titanic\n\n\n\n\n\n\n\n\n\n\n\nJul 2, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nBoard of Directors Evaluation\n\n\n\n\n\n\n\n\n\n\n\nDec 24, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nUnderstanding balanced scorecard\n\n\n\n\n\n\n\n\n\n\n\nSep 13, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nMaking bar chart using ggplot\n\n\n\n\n\n\n\n\n\n\n\nSep 13, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nFinancial Formulas\n\n\n\n\n\n\n\n\n\n\n\nSep 13, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nManual of authority (MoA) | What to include? and more importantly what not to include?\n\n\n\n\n\n\n\n\n\n\n\nAug 24, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nUnderstanding Version Control, Git & Github\n\n\n\n\n\n\n\n\n\n\n\nJul 24, 2022\n\n\nAhsan Iftikhar\n\n\n\n\n\n\n\n\n\n\n\n\nMaking pie chart using ggplot\n\n\n\n\n\n\n\n\n\n\n\nJun 22, 2022\n\n\n\n\n\n\n\n\n\n\n\n\nUsing SSH to connect to Github\n\n\n\n\n\n\n\n\n\n\n\nMay 22, 2022\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "Blog Expectations A brief statement about objectives and what to expect from this blog\nWriting and teaching is an exploratory and insightful journey for better understanding and assimilation of knowledge. This blog aims to share my learning journey. Following expectations defines the content in this blog.\n\nMost of the content will focus on areas like data science, tools & technologies and generating valuable insights.\nIn addition, it will feature topics on business, strategy, finance and audit.\nIn almost all the cases, I will not be the originator of knowledge and content, rather it’s an attempt to share my understanding and insights. All original authors and content writers will be adequately referenced.\n\nImportant: None of the posts shared on this blog represent a professional advise. Its rather my perspectives and opinions, which often change frequently. Treat the posts on this blog, as occasional conversations from a friend who is trying to provide or get a better understanding."
-  },
-  {
-    "objectID": "posts/ammonia_&_urea_manufacturing/index.html",
-    "href": "posts/ammonia_&_urea_manufacturing/index.html",
-    "title": "Ammonia & Urea Manufacturing",
-    "section": "",
-    "text": "Introduction\nChecking. I have updated some text here, just to check if the project is getting updated.\nThis is the 2nd line of updates that I have done"
-  },
-  {
-    "objectID": "posts/bar_chart_using_ggplot/index.html",
-    "href": "posts/bar_chart_using_ggplot/index.html",
-    "title": "Making bar chart using ggplot",
-    "section": "",
-    "text": "A chart featuring the interaction of a categorical variable and it’s numercial value. More simply, the numercial values are represented by bars, whose length vary based on the value\n\nBar chart is more preferrable than pie charts and mostly better choice to compare values."
-  },
-  {
-    "objectID": "posts/bar_chart_using_ggplot/index.html#bar-chart",
-    "href": "posts/bar_chart_using_ggplot/index.html#bar-chart",
-    "title": "Making bar chart using ggplot",
-    "section": "Bar chart",
-    "text": "Bar chart\n\nggplot2::ggplot(data = df, mapping = aes(x = brand, y = share)) +\n  geom_bar(stat = \"identity\")\n\n\n\n\n\n\n\n\n\n# Move this to Abraj R File -----------------------------------------------\nsummary_obs &lt;- tibble(\n  rating = c(\"High\", \"Medium\", \"Low\"),\n  obs = c(0, 2, 7),\n  color = c(\"red\", \"yellow\", \"green\"),\n  ann = c(\"No high rated exception\", \" \", \" \")\n  )\n\n# summary_obs &lt;- summary_obs %&gt;%\n#   mutate(\n#     rating = factor(summary_obs$rating, levels = c(\"High\", \"Medium\", \"Low\"))\n#   )\n\nsummary_obs &lt;- summary_obs %&gt;%\n  mutate(\n    rating = as_factor(rating)\n  )\n\nggplot2::ggplot(data = summary_obs, aes(x = rating, y = obs)) +\n  geom_bar(stat = \"identity\", aes(fill = rating)) +\n  geom_text(aes(label = obs)) +\n  theme_minimal() +\n  scale_fill_manual(values = c(\"red\", \"yellow\", \"green\")) +\n  labs(title = \"Finance & Accounts Review\",\n       subtitle = \"Summary of observations by rating\",\n       x = \"Risk Rating\",\n       y = \"No. of Observations\"\n       ) +\n  theme(\n    legend.position = \"none\"\n  )"
-  },
-  {
-    "objectID": "posts/books/index.html",
-    "href": "posts/books/index.html",
-    "title": "List of Read Books",
-    "section": "",
-    "text": "This pages gives a of the books, that I have read"
-  },
-  {
-    "objectID": "posts/file_n_folder_mgmt/index.html",
-    "href": "posts/file_n_folder_mgmt/index.html",
-    "title": "File Management for Data Projects",
-    "section": "",
-    "text": "Reading files easily\nReading and writing files can sometimes be challenging. This is an attempt to share the process I am following for making it easy to reading and writing of files in R."
   },
   {
     "objectID": "posts/moa_key_considerations/index.html",

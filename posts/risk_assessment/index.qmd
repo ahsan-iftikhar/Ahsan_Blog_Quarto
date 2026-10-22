@@ -1,11 +1,92 @@
 ---
-title: "Risk Assessment - How identify the risk"
+title: "Risk Assessment - How to identify the risk"
 date: "2027-01-01"
 author: "Ahsan Iftikhar"
 ---
+This document summarizes my experience, challenges and eventually research to find the best possible methodology for risk assessment. I would like to highlight that I have taken extensive support from different LLM models, in pursuit of writing this article 
 
-1. Process classification scheme (PCS) to ensure coverage
+## A. Elicitation and group cognition
 
-2. Using Boetie method
+| Methodology | Description | Reference | When NOT to use | Most suitable for |
+|---|---|---|---|---|
+| Structured brainstorming | Facilitated generation of candidate risks by a group against a prompt set | IEC 31010:2019 ◐ · ISO 31000 "inclusive" | As the only method; for a single high-consequence event | Default first pass of any cycle |
+| Semi-structured interviews | One-to-one questioning with open prompts to surface tacit knowledge | IEC 31010:2019 ◐ | When breadth is needed quickly; as the sole method | Capturing work-as-done before the workshop |
+| Delphi method | Iterative anonymous expert rounds converging on a judgement and its dispersion | IEC 31010:2019 ◐ | When speed matters; when consensus will be manufactured | Low-frequency risks where experts disagree |
+| Nominal group technique | Silent individual generation, then structured ranking for equal airtime | [P] | When novel, imaginative risk is the goal | Fair ranking in hierarchy-heavy cultures |
+| Brainwriting (6-3-5) | Written ideas passed around in timed rounds, then collected | [P] | When the prompt set is absent | Large groups with dominant personalities |
+| Pre-mortem | Team assumes the plan failed and works backwards to the causes | [P] (Klein) | For routine operational risk; without a real facilitator | Stress-testing a plan before approval |
+| Red teaming | An independent group structured to challenge a plan or assumption set | [P] · NIST SP 800-115 ◐ | As tokenism; without independence | Challenging bids, security and strategy |
+| War-gaming / simulation | Immersive exercise testing decisions against a running scenario | [P] | When findings must be generalisable | Crisis response and escalation paths |
+| Observation / shadowing | Direct watching of work-as-done to find drift from procedure | [P] · ISO 45001 ◐ | When breadth is needed quickly | Verifying work-as-done in the field |
+| Crowdsourcing / near-miss reporting | Frontline submission channels aggregating many small signals | ISO 45001 ◐ · [P] | Without triage capacity; in a blame culture | Dispersed field operations at volume |
 
+## B. Prompt and context
 
+| Methodology | Description | Reference | When NOT to use | Most suitable for |
+|---|---|---|---|---|
+| Risk taxonomy / prompt list | Structured categories that prompt recall across the risk universe | COSO 2017 Principle 6 ◐ · ISO 31000 6.4.2 ◐ · [P] | Alone — yields categories, not events; when stale or unowned | The backbone, paired with any method |
+| Checklists / questionnaires | Fixed lists applied systematically to a defined scope | IEC 31010:2019 ◐ | For novel or emerging risk | Auditing completeness of a known scope |
+| PESTLE | Scan of external drivers across six lenses | [P] · ISO 31000 6.3.3 ◐ | For specific events or internal detail | Strategy-level external scanning |
+| SWOT | Matrix of internal strengths/weaknesses, external opportunities/threats | [P] | **As an identification method at all** | Opening a strategy conversation |
+| Futures wheel / horizon scanning | Mapping second/third-order consequences; tracking weak signals | [P] · ISO 31000 "best available information" | For near-term, verifiable risk | Emerging and third-order consequences |
+| Morphological / cross-impact | Systematic combination of variables to generate futures | IEC 31010:2019 ◐ | Without a triage gate | Systematic futures for tech/regulation |
+
+## C. Structured deviation and hazard
+
+| Methodology | Description | Reference | When NOT to use | Most suitable for |
+|---|---|---|---|---|
+| HAZID (Hazard Identification) | Structured hazard identification within a defined scope using guidewords | [P] · ISO 17776 ◐ | For ongoing operations; for commercial risk | Early design of a physical site or process |
+| SWIFT (Structured What-If) | Team applies what-if guidewords to a process or change | IEC 31010:2019 ◐ | For complex interacting systems | Projects and change, fast and cheap |
+| HAZOP (Hazard and Operability) | Node-by-node deviation analysis via parameter + guideword pairs | IEC 61882:2016 ◐ | For simple systems (overkill); for people factors alone | Complex interconnected process systems |
+| JSA / task risk assessment | Task broken into steps; hazard and control per step | ISO 45001 ◐ · [P] | For enterprise or systemic risk | Every maintenance task, every permit |
+| Hierarchical task analysis | Task decomposed into subtasks to locate error points | IEC 62508:2010 ◐ · [P] | Without field validation | Error points in maintenance procedures |
+
+## D. Failure-mode and causal
+
+| Methodology | Description | Reference | When NOT to use | Most suitable for |
+|---|---|---|---|---|
+| FMEA (Failure Mode and Effects Analysis) | Bottom-up listing of component failure modes, effects and detection | IEC 60812:2018 | For high-level enterprise risk; for cross-system interaction | Maintenance planning for critical assets |
+| FMECA (FMEA + Criticality) | FMEA plus a criticality ranking of each failure mode | IEC 60812:2018 | Before the FMEA data exists | Spares and capital prioritisation |
+| Fault tree analysis | Top-down logic diagram of how a top event could occur | IEC 61025:2006 | For broad identification (needs a defined top event) | Verifying defences for a known worst case |
+| Event tree analysis | Forward logic from an initiator through successive safeguards | IEC 62502:2010 ◐ | For unimagined initiators | Consequences of a defined initiator |
+| LOPA (Layers of Protection Analysis) | Semi-quantitative check that protection layers reduce risk to target | IEC 61511 ◐ · CCPS [P] | For vague scenarios without defined layers | Justifying treatment for high-hazard scenarios |
+| Bow-tie | Causes left, event centre, consequences right, controls each side | IEC 31010:2019 ◐ · Energy Institute [P] | For aggregate/portfolio view | Communicating one serious event and its controls |
+| Barrier analysis | Map of defences and where they are degraded or absent | [P] (Reason) · Energy Institute | For emergent, dynamic interaction | Verifying the control stack on a bow-tie |
+| Root cause analysis | Structured trace from an event back to its causal factors | IEC 62740:2015 ◐ · ISO 45001 | For future/emerging risk; for single-cause certainty | Post-incident and near-miss learning |
+| HRA (Human Reliability Analysis) | Analysis of error-prone tasks and human error likelihood | IEC 62508:2010 ◐ · HEART/SPAR-H [P] | For non-safety-critical work; for false precision | Error-prone safety-critical tasks |
+| RCM (Reliability Centred Maintenance) | Determines failure modes and the maintenance each justifies | IEC 60300-3-11:2009 ◐ · SAE JA1011 | For low-criticality assets; without an asset hierarchy | Asset-intensive renewal planning |
+| Common cause failure analysis | Finds shared dependencies that defeat redundancy | IEC 61508/61511 ◐ · [P] | Without accurate dependency mapping | Power, control and monitoring redundancy |
+
+## E. Model and systems
+
+| Methodology | Description | Reference | When NOT to use | Most suitable for |
+|---|---|---|---|---|
+| Scenario analysis / stress testing | Narratives or quantified shocks of plausible futures | IEC 31010:2019 ◐ · TCFD/ISSB ◐ | For precise likelihood; for operational detail | Exploring what has not happened yet |
+| Reverse stress testing | Starts from failure and identifies conditions that would cause it | [R] PRA/EIOPA · [P] | For routine risk; without board support | Finding what must be true for failure |
+| Causal loop / system dynamics | Maps feedback loops and simulates behaviour over time | [P] (Forrester) | For discrete event identification | Feedback and unintended consequences |
+| FRAM (Functional Resonance Analysis) | Models how function variability propagates through a system | [P] (Hollnagel) | For conventional systems; without training | Complex socio-technical variability |
+| STPA (System-Theoretic Process Analysis) | Identifies unsafe control actions in a control-structure model | [P] (Leveson) · ISO 21448 ◐ | For simple systems; without a trained analyst | Software-intensive, automated systems |
+
+## F. Data-driven
+
+| Methodology | Description | Reference | When NOT to use | Most suitable for |
+|---|---|---|---|---|
+| Incident / near-miss analysis | Mining past events and near-misses for recurring causes | ISO 31000 6.6 ◐ · ISO 45001 · COSO Principle 9 | For risks that have never occurred | The corrective to group memory — every cycle |
+| Audit, inspection and condition data | Using assurance findings and asset condition as evidence | ISO 31000 6.6 ◐ · ISO 55001 · Three Lines Model | For the unknown — the scope is your boundary | Evidence of what is already failing |
+| Telemetry / anomaly detection | Automated detection of precursors in sensor data | [P] · ISO 55001 ◐ | Without data quality; for un-instrumented assets | Early warning across an asset fleet |
+| Text mining of logs | Statistical extraction of patterns from unstructured records | [P] | For small volumes; for causal certainty | Patterns in field tickets and complaints |
+
+## G. Domain regimes — the better source, not ISO 31000
+
+| Methodology | Description | Reference | When NOT to use | Most suitable for |
+|---|---|---|---|---|
+| Threat modelling / TVRA | Maps threat sources, vulnerabilities and attack paths | ISO/IEC 27005 ◐ · NIST SP 800-30 · NIST SP 800-154 · CPNI [R] | For non-security risk; restricted circulation | Physical and cyber security of sites |
+| BIA (Business Impact Analysis) | Quantifies time-based impact of disruption per activity | ISO 22301:2019 | For threat identification (impact only) | Recovery-time prioritisation |
+| Compliance obligation register | Lists obligations mapped to controls and owners | ISO 37301:2021 | For voluntary/reputational exposure | Consent- and licence-driven identification |
+| Third-party / concentration | Maps dependency and substitutability across supply tiers | ISO 37500:2014 ◐ · [P] | Beyond tier-1 visibility | Supply-side single points of failure |
+| DPIA (Data Protection Impact Assessment) | Assesses privacy harms of a processing activity | GDPR art. 35 · ISO 27701 ◐ | For non-privacy risk | New monitoring and data-sharing |
+| Environmental & social impact | Evaluates external impacts of a project or change | [R] national law · IFC Performance Standards · ISO 14001 | For cumulative or enterprise-wide risk | Greenfield and community-facing builds |
+| Climate scenario analysis | Assesses physical and transition risk under climate futures | TCFD · ISSB IFRS S2 | For short-horizon operational risk | Physical/transition risk, asset resilience |
+| Fraud risk assessment | Identifies fraud schemes mapped to processes and roles | COSO Fraud Risk Management Guide 2016 · IIA | Without fraud expertise | Procurement, payments, fuel, payroll |
+
+No new verification items are introduced by this change — the standing list applies unchanged (IEC 31010:2019 annex letters, IEC 61882, IEC 60812, IEC 61025, IEC 62502, IEC 62740, IEC 60300-3-11, ISO 22301, ISO 37301, ISO 37500, ISO 45001, ISO 55001, ISO/IEC 27005, and ISO 31000:2018 at 6.3.3, 6.4.2 and 6.6). If useful, the next step is to turn this into a single deliverable document with a short selection flowchart on top.
